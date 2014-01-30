@@ -1,0 +1,274 @@
+\chapter{Plasma Waves}
+\label{chap:plasmawaves}
+In this chapter, all units are SI with the exception of temperature,
+which is defined in the historical units of eV (electron-volts).\\
+
+\noindent
+$\mathbf{E}$ and $\mathbf{B}$ are the electric and magnetic fields, respectively\\
+$\hat{\textbf{b}}$ is a unit vector in the direction of $\textbf{B}$\\
+$||$ and $\perp$ indicate parallel and perpendicular to $\hat{\textbf{b}}$\\
+$\mathbf{k}$ is the wave vector\\ 
+$\omega_{pi}$ is the plasma frequency for particle $i$ \\
+$\Omega_i$ is the cyclotron frequency for particle $i$\\
+$\tilde{\mathrm{X}}$ implies that X can be a complex number
+
+\section{Cold Plasma Electromagnetic Waves}
+\noindent
+Starting from Maxwell's equation, linearize $Q =
+\widetilde{Q}\exp(i\textbf{k}\cdot\textbf{r} - i \omega t)$,
+$\textbf{J} = \overleftrightarrow{\boldsymbol{\sigma}} \cdot \textbf{E}$ \scite{stix}{8}
+\fla{\textbf{n} \times \textbf{n} \times \textbf{E} + \left(\overleftrightarrow{\textbf{I}} + \frac{i \overleftrightarrow{\boldsymbol{\sigma}}}{\epsilon_{o} \omega} \right) \cdot \textbf{E} &= 0&}
+\indent where $\textbf{n} = c \textbf{k}/\omega$\\
+
+\index{Cold plasma dispersion relation}
+\noindent
+By combining this equation with the momentum conservation equations, $\textbf{J} = \sum_{j} n_{j} q_{j} v_{j}$, 
+setting $p = 0$, and setting collisionality to 0, it is possible to solve for
+$\sigma$. Plugging in $\sigma$ and then writing in tensor form with
+Stix notation,
+\fla{
+  & \left( \begin{array}{lll}
+    S - n_{||}^{2} & -iD & n_{\bot} n_{||}  \\
+    iD & S- n^{2} & 0 \\
+    n_{\bot} n_{||} & 0 &  P - n_{\bot}^{2} \end{array}\right)\left(\begin{array}{l}
+    E_{x} \\
+    E_{y}\\
+    E_{z} \end{array}\right)= 0 &
+}
+\indent where \scite{stix}{7}
+\fla{
+S & = 1 - \sum_{j} \frac{\omega_{pj}^{2} }{\omega^2-\Omega_{j}^{2}} & \\
+D & = \sum_{j} \frac{\Omega_{j}}{\omega} \frac{\omega_{pj}^{2}}{\omega^2-\Omega_{j}^{2}} & \\
+P & = 1 - \sum_{j} \frac{\omega_{pj}^{2}}{\omega^{2}} & \\
+R & = S+D = 1- \sum_{j} \frac{\omega_{pj}^{2}}{\omega \left(\omega + \Omega_{j} \right)} & \\
+L & = S-D = 1- \sum_{j} \frac{\omega_{pj}^{2}}{\omega \left(\omega - \Omega_{j} \right)} & \\
+}
+
+\noindent For a wave propagating at an angle $\theta$ to $\hat{\textbf{b}}$ \scite{stix}{8}
+\fla{
+  A &n^{4} - Bn^{2} + C = 0&\\
+  A & = S \sin^{2}\theta + P \cos^{2}\theta&\\
+  B & = RL \sin^{2}\theta + PS \left(1 + \cos^{2}\theta \right)&\\
+  C & = PRL
+}
+
+\noindent
+The equation can be rearranged, conveniently obtaining a handy mnemonic (``P Nar Nal Snarl Nap'') \scite{stix}{9}
+\fla{\tan^{2}(\theta) &= - \frac{P \left(n^{2} - R \right) \left(n^{2} -L \right)}{\left(S n^{2} - RL \right)\left( n^{2} -P \right)} &}
+
+\noindent For a wave traveling at an angle $\theta$ to $\hat{\textbf{b}}$, the dispersion relation is given by the Appleton-Hartree equation \scite{stix}{38}
+\index{Appleton-Hartree}
+\fla{n^{2} &= 1- \frac{2 \omega_{pe}^{2} \left(\omega^{2}-\omega_{pe}^{2}\right)}{2 \omega^{2} \left(\omega^{2}-\omega_{pe}^{2} \right) - \Omega_{e}^{2}\omega^{2}\sin^{2} \theta \pm \Omega_{e} \omega^{2} \Sigma} &}
+\fla{ \Sigma &= \left[ \Omega_{e}^{2} \sin^{4} \theta + 4 \omega^{4} \left( 1 - w_{pe}^{2} / \omega^{2} \right)^{2} \cos^{2} \theta \right]^{1/2} &}
+
+\noindent Polarization of a wave \scite{stix}{10}
+\index{Wave polarization}
+\fla{\frac{i E_{x}}{E_{y}} &= \frac{n^{2} - S}{D} &}
+
+\subsection{Common Cold Plasma Waves}
+
+\index{Cold plasma waves! Light wave}
+\index{Cold plasma waves! O-wave}
+\index{Cold plasma waves! X-wave}
+\index{Cold plasma waves! R-wave}
+\index{Cold plasma waves! L-wave}
+\begin{table} [h!]
+  \centering
+  \begin{tabular} {l l l l l}
+    \hline
+    Name \T\B& Dispersion Relation\scite{chen}{145} & Type & Resonance & Cutoff \footnotemark\\
+    \hline\hline
+    Light Wave \T& $n^{2} = 1 - \sum_{j} \frac{\omega_{pj}^{2}}{\omega^{2}}$ & $\textbf{B}_{0} = 0$ & NA & $\omega_{pe}$\\[5pt]
+    O wave & $n^{2} = P$& $\textbf{n} \perp \textbf{B}_{0}$ & NA & $\omega_{pe}$ \\[5pt]
+    X wave & $n^{2} = RL/S$ &  $\textbf{n} \perp \textbf{B}_{0}$ & $\omega_{uh}, \omega_{lh}$ & $\omega_{r}, \omega_{l}$ \\[5pt]
+    R wave & $n^{2} = R$ &  $\textbf{n} || \textbf{B}_{0}$, right-handed & $\Omega_{e}$ & $\omega_{r}$\\[5pt]
+    L wave \B& $n^{2} = L$ &  $\textbf{n} || \textbf{B}_{0}$, left-handed & $\Omega_{i}$ & $\omega_{l}$\\[5pt]
+    \hline
+  \end{tabular}
+\end{table}
+
+\footnotetext{Cutoff/Resonances listed for single ion species plasma}
+
+\noindent Defining special frequencies \scite{chen}{127}\scite{stix}{29}
+
+\fla{\omega_{R} &= \frac{\Omega_{e} + \sqrt{\Omega_{e}^{2} + 4 \omega_{pe}^{2}}}{2}&}
+\fla{\omega_{L} &= \frac{-\Omega_{e} + \sqrt{\Omega_{e}^{2} + 4 \omega_{pe}^{2}}}{2}&}
+\fla{\omega_{uh}^{2}&= \omega_{p}^{2} + \Omega_{e}^{2}&}
+\fla{\omega_{lh}^{2}&= \Omega_{i}^{2} + \frac{\omega_{pi}^{2}}{1+\omega_{pe}^{2}/\Omega_{e}^{2}}&}
+
+\noindent For waves that are almost one of the O, X, L, R waves, with a small angle with respect to the proper propogation direction, we get the following dispersion relations. In these equations, $\alpha = \omega_{pe}^{2}/ \omega^{2}$. \cite{porkolab}
+
+\index{Quasi-transverse waves}
+\begin{table}[h!]
+  \centering
+  \begin{tabular} {l l}
+    \hline
+    Wave Name \T\B &  Dispersion Relation \\
+    \hline\hline
+    QT-O \T& $n^{2} \simeq \frac{1-\alpha}{1-\alpha \cos^{2} \theta}$ \\[5pt]
+    QT-X   & $n^{2} \simeq \frac{\left( 1-\alpha \right)^{2} \omega^{2} - \Omega_{e}^{2} \sin^{2} \theta}{\left(1-\alpha \right) \omega^{2} - \Omega_{e}^{2} \sin^{2} \theta}$ \\[5pt]
+    QL-L   & $n^{2} \simeq 1- \frac{\alpha \omega}{\omega + \Omega_{e} \cos \theta} $\\[5pt]
+    QL-R \B& $n^{2} \simeq 1- \frac{\alpha \omega}{\omega - \Omega_{e} \cos \theta }$ \\[5pt]
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\index{Electrostatic waves}
+\section{Electrostatic Waves}
+
+\noindent These are waves with no perturbed magnetic field. The
+dispersion relation can be derived by combining Gauss's law, momentum
+conservation, and continuity equations. It is important to note that
+$\textbf{k} || \textbf{E}$. Let k lie in the (x,z) plane, where z
+points the direction of $\hat{\textbf{b}}$. \cite{porkolab}
+
+\fla{ 1 &- \sum_{j}  \left( \frac{ \omega_{pj}^{2}}{\omega^{2} - \Omega_{j}^{2}}\frac{k_{x}^{2}}{k^{2}} + \frac{\omega_{pj}^{2}}{\omega^{2}} \frac{k_{z}^{2}}{k^{2}} \right) = 0 &}
+
+\index{Plasma oscillations}
+\index{Upper hybrid oscillations}
+\index{Lower hybrid oscillations}
+\index{Trivelpiece-Gould}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{r c l c c c}
+    \multicolumn{6}{c}{Electrostatic wave solutions}\\
+    \hline
+    \multicolumn{3}{c}{Solution for $k$ \T\B }& Dispersion relation & Solution & Type \\
+    \hline\hline
+    $k_x$&=&$0$             \T  & $1- \sum\limits_{j}\!\! \frac{\omega_{pj}^{2}}{\omega^{2}}=0$                   & $\omega^2 = \sum\limits_{j} \! \omega_{pj}^2$ & Plasma oscillations \\[5pt]
+    \multirow{2}{*}{$k_z$}&\multirow{2}{*}{=}&\multirow{2}{*}{$0$}& \multirow{2}{*}{$1 - \sum\limits_{j} \!\! \frac{\omega_{pj}^{2}}{\omega^2 - \Omega_{j}^{2}} = 0$} & $\omega=\omega_{uh}$ & Upper hybrid\\[5pt]
+    &&                        &                                                                      & $\omega=\omega_{lh}$ & Lower hybrid \\[5pt]
+    $k_x$&$\ne$&$0$ & \multirow{2}{*}{$\omega^{2} = \frac{ \omega_{uh}^{2} }{2} \pm \frac{\omega_{uh}^{2}}{2} \left( 1- \frac{4 \Omega_{e}^{2} \omega_{pe}^{2} \cos^{2} \theta}{\omega_{uh}^{4}} \right)^{1/2}$} & & \multirow{2}{*}{Trivelpiece-Gould}\\
+    $k_z$&$\ne$&$0$ \B & & &\\
+    \hline
+  \end{tabular}
+\end{table}
+
+\pagebreak
+\index{MHD waves}
+\section{MHD Waves}
+
+\noindent Using the MHD formulation describing plasmas, one can define a perturbation and analyze what waves propogate in a plasma. The matrix equation is given below, where $v_a = B_{0}/ \sqrt{\mu_{0} \rho_{0}}$ and $v_{s} = \sqrt{\gamma p_{0}/\rho_{0}}$. \scite{freidberg-PP}{314}
+
+\[ \left( \begin{array}{ccc}
+\omega^{2}-k_{||}^{2} v_{a}^{2} & 0 & 0 \\
+0 & \omega^{2} - k^{2} v_{a}^{2} - k_{\bot}^{2} v_{s}^{2} & -k_{\bot} k_{||}v_{s}^{2} \\
+0 & -k_{\bot}k_{||}v_{s}^{2} & \omega^{2} -k_{||}^{2} v_{s}^{2} \end{array} \right) \left( \begin{array}{c}
+\xi_{x} \\
+\xi_{y} \\
+\xi_{z} \end{array} \right) = 0 \]
+
+\index{Shear Alfv\'en wave}
+\index{Compressional Alfv\'en wave}
+\index{Sound wave}
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{c c c}
+    \multicolumn{3}{c}{MHD wave solutions}\\
+    \hline
+    Solution \T\B & Solution ($\beta \ll 1$) & Wave type \\
+    \hline\hline
+    $\omega^{2} = k_{||}^{2}v_{a}^{2}$ \T& & Shear Alfv\'en \scite{freidberg-PP}{314}\\[7pt]
+    $\omega^{2} = \frac{k^2}{2}\left( v_{a}^{2} + v_{s}^{2} \right) \left[1 \pm ( 1 - \alpha)^{1/2} \right]$ & $\omega^2 \approx (k_{\bot}^{2} + k_{||}^{2}) v_{a}^{2}$ & Compressional \scite{freidberg-PP}{315}\\
+    where $\alpha = 4 \frac{k_{||}}{k^{2}} \frac{v_{s}^{2} v_{a}^{2}}{(v_{s}^{2} + v_{a}^{2})^{2}}$ & & Alfv\'en\\[7pt]
+    \B& $\omega^2 \approx k_{||}^{2} v_{s}^{2}$ & Sound\scite{freidberg-PP}{316}\\[7pt]
+    \hline
+  \end{tabular}
+\end{table}
+
+\index{Hot plasma waves}
+\section{Hot Plasma}
+
+\noindent The hot plasma dispersion relations are calculated using the
+Vlasov equation and including finite Larmor orbit effects. Hot plasma
+effects are also characterized by electrostatic and electromagnetic
+waves.
+
+\index{Hot plasma waves! Electrostatic}
+\subsection{Electrostatic}
+\noindent
+The dispersion relation (general plasmas) \cite{porkolab}
+\fla{ \epsilon(\omega, k) &= 1+ \sum_{j} \chi_{j} \left( \omega, k \right) = 0&}
+\fla{ \chi_{j} &= \frac{\omega_{pj}^{2}}{k^2} \frac{2 \pi}{n_{0j}} \int\limits_{-\infty}^{\infty} dv_{||} \int\limits_{0}^{\infty} v_{\bot} dv_{\bot} \sum_{m} \frac{J_{m}^{2} (\frac{k_{\bot} v_{\bot}}{\Omega_{j}}) \left[ k_{||} \frac{\partial f_{0j}}{\partial v_{||}} + \frac{m \Omega_{j}}{v_{\bot}} \frac{\partial f_{0j}}{\partial v_{\bot}} \right]}{\omega - m\Omega_{j} - k_{||} v_{||}} &}
+\indent where the number subscripts refer to the linearization order.\\
+
+\noindent 
+The dispersion relation (Maxwellian plasmas)
+\fla{ \epsilon &= 1 + \sum_{j} \frac{1}{k^{2} \lambda_{Dj}^{2}} \left[1+ \zeta_{0j} \sum_{m = -\infty}^{m=\infty} \Gamma_{m}(b_{j}) Z(\zeta_{mj}) \right]&}
+\indent
+where
+
+\flatwo{
+  Z(\zeta_{mj}) &= \frac{1}{\sqrt{\pi}} \int\limits_{-\infty}^{\infty} \frac{dv_{||} e^{v_{||}^{2}/v_{Thj}^{2}}} {v_{||}-\left( \frac{\omega-m\Omega_{j}}{k_{||}} \right)} &
+  b_{j} &= k_{\bot}^{2} \rho_{Lj}^{2} &\\
+  \zeta_{mj} &= (w-m\Omega_{j})/(k_{||} v_{Thj}) &
+  \Gamma_{m}(b_{j}) &\equiv I_{m}(b_{j}) \exp(-b_{j}) &
+}{3}
+
+\noindent This function can be evaluated as a power or an asymptotic series. % NOTE:Quote Fried and Conte%
+\index{$\zeta$ function}
+\fla{
+& \left| \zeta_{m} \right| \ll 1 \text{~~~(kinetic limit)} & \\
+& Re Z(\zeta_{m}) \approx -2 \zeta_{m} \left[ 1 - \frac{2}{3} \zeta_{m}^{2} + \frac{4}{15} \zeta_{m}^{4} + ... \right] \text{(power series)} & 
+}
+
+\fla{
+& \left| \zeta_{m} \right| \gg 1 \text{~~~(fluid limit)} & \\
+& Re Z(\zeta_{m}) \approx  -\frac{1}{\zeta_{m}} \left[ 1 + \frac{1}{2 \zeta_{m}^{2}} + \frac{3}{4 \zeta_{m}^{4}} + ... \right] \text{(asymptotic) } &
+}
+
+\noindent $\Gamma$ can be expanded as well as
+\index{$\Gamma$ factor}
+\fla{
+\Gamma_{0} &\approx 1 - b + \frac{3}{4} b^{2} + O(b^{3}) & \\
+\Gamma_{1} &\approx \frac{b}{2}(1-b) + O(b^{3}) & \\
+\Gamma_{2} &\approx b^{2 }/ 8 + O(b^{3}) & \\
+\Gamma_{3} &\approx O(b^{3}) &
+}
+
+
+\pagebreak
+\index{Hot plasma waves! Electromagnetic}
+\subsection{Electromagnetic}
+
+\noindent The dispersion relation in the electromagnetic limit \cite{porkolab}
+\[ \left( \begin{array}{lll}
+ K_{xx} - n_{z}^{2} & K_{xy}  & K_{xz} + n_{x} n_{z}  \\
+K_{yz} & K_{yy}- n_{x}^{2} - n_{z}^{2} & K_{yz} \\
+K_{zx} + n_{x} n_{z} & K_{zy} & K_{zz}-n_{z}^{2}  \end{array}\right) \left( \begin{array}{c}
+E_{x}\\
+E_{y}\\
+E_{z} \end{array}\right) = 0\] 
+
+
+%!!!!!!!!!!!!!!!!!!!!! NOTE: In WAVES we found a mistake in one of these. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%
+\fla{
+ K_{xx} &= 1+ \sum_{j=i,e} \sum_{l=-\infty}^{\infty} \frac{l^{2} \Omega^{3}}{k_{\bot}^{2}} \int dv^{2} J_{l}^{2} (\lambda) P_{l} & \\
+ K_{xy} &= -K_{yx} = i  \sum_{j} \sum_{l=-\infty}^{\infty} \frac{l \Omega^{2}}{k_{\bot}} \int dv^{2} v_{\bot} J_{l} (\lambda) J'_{l} (\lambda) P_{l} & \\
+ K_{xz} &= \sum_{j} \sum_{l=-\infty}^{\infty} \frac{l \Omega^{2}}{k_{\bot}} \int dv^{2} v_{||} J_{l}^{2} (\lambda) Q_{l} & \\
+ K_{yy} &= 1+  \sum_{j} \sum_{l=-\infty}^{\infty} \Omega \int dv^{2} \left[ v_{\bot} J'_{l} (\lambda) \right]^{2} P_{l} & \\
+ K_{yz} &= -i \sum_{j} \sum_{l=-\infty}^{\infty} \Omega \int dv^{2} v_{\bot} v_{||} J_{l} (\lambda) J'_{l} (\lambda) Q_{l} & \\ 
+ K_{zx} &= \sum_{j} \sum_{l=-\infty}^{\infty} \frac{l \Omega^{2}}{k_{\bot}} \int dv^{2} v_{||} J_{l}^{2} (\lambda) P_{l} & \\
+ K_{zy} &= i \sum_{j} \sum_{l=-\infty}^{\infty} \Omega \int dv^{2} v_{\bot} v_{||} J_{l} (\lambda) J'_{l} (\lambda) P_{l} &  \\
+ K_{zz} &= 1+  \sum_{j} \sum_{l=-\infty}^{\infty} \Omega \int dv^{2}  v_{||}^{2} J_{l}^{2} (\lambda) Q_{l} &
+}
+
+\fla{\int dv^{2} &\equiv 2 \int\limits_{-\infty}^{\infty} dv_{||} \int\limits_{0}^{\infty} v_{\bot} dv_{\bot}&}
+\fla{P_{l} &= 2 \pi \frac{\omega_{pj}^{2}}{\omega \Omega_{j}} \frac{\left[ \frac{\partial f_{0j}}{\partial v_{\bot}^{2}} + \frac{k_{||}v_{||}}{\omega} \left( \frac{\partial f_{0j}}{\partial v_{||}^{2}} - \frac{\partial f_{0j}}{\partial v_{\bot}^{2}} \right) \right]} {\omega - l \Omega_{j} - k_{z} v_{||}} &}
+\fla{Q_{l} &= 2 \pi \frac{\omega_{pj}^{2}}{\omega \Omega_{j}} \frac{\left[ \frac{\partial f_{0j}}{\partial v_{||}^{2}} - \frac{l \Omega_{j}}{\omega} \left( \frac{\partial f_{0j}}{\partial v_{||}^{2}} - \frac{\partial f_{0j}}{\partial v_{\bot}^{2}} \right) \right]} {\omega - l \Omega_{j} - k_{z} v_{||}}&}
+
+\indent where $\lambda = \left| k_{\bot}v_{\bot}/\Omega \right|$ and $\partial f/ \partial v^{2} \equiv \partial f/ \partial \left(v^{2} \right)$\\ 
+
+\noindent
+Dispersion relation evaluation for an isotropic Maxwellian plasma \scite{chen}{276}%reference F. F .Chen
+\index{Hot plasma waves! Electromagnetic (maxwellian)}
+\fla{
+ K_{xx} &= 1+ \sum_{j} \frac{\omega_{pj}^{2}}{\omega^{2}} \frac{e^{-b_{j}}}{b_{j}} \zeta_{0} \sum_{n=-\infty}^{\infty} n^{2} I_{n}(b_{j}) Z(\zeta_{n}) & \\
+ K_{xy} &= -K_{yz} = i  \sum_{j} \pm  \frac{\omega_{p}^{2}}{\omega^{2}} e^{-b_{j}} \zeta_{0} \sum_{n=-\infty}^{\infty} n \left[ I_{n}(b_{j}) - I_{n}'(b_{j}) \right] Z(\zeta_{n})  & \\
+ K_{xz} &= K_{zx} = \sum_{j} \frac{\omega_{pj}^{2}}{\omega^{2}} \frac{e^{-b_{j}}}{\left(2b_{j} \right)^{1/2}} \zeta_{0}  \sum_{n=-\infty}^{\infty} n I_{n}(b_{j}) Z'(\zeta_{n}) & \\
+ K_{yy} &= 1+  \sum_{j}\frac{\omega_{pj}^{2}}{\omega^{2}} \frac{e^{-b_{j}}}{b_{j}} \zeta_{0} \sum_{n=-\infty}^{\infty} \left( n^{2} I_{n}(b_{j})+2 b_{j}^{2} \left[ I_{n}(b_{j})-I'_{n}(b_{j}) \right] \right) Z(\zeta_{n}) & \\
+ K_{yz} &= -K_{zy} = -i \sum_{j} \pm \frac{\omega_{pj}^{2}}{\omega^{2}} \left( \frac{b_{j}}{2}\right)^{1/2} e^{-b_{j}} \zeta_{0} \sum_{n=-\infty}^{\infty} \left[ I_{n}(b_{j}) - I'_{n}(b_{j}) \right]Z'(\zeta_{n}) & \\ 
+ K_{zz} &= 1 -  \sum_{j} \frac{\omega_{pj}^{2}}{\omega^{2}} e^{-b} \zeta_{0} \sum\limits_{n=-\infty}^{\infty}\!\! I_{n}(b_{j})\zeta_{n}Z'(\zeta_{n}) & 
+}

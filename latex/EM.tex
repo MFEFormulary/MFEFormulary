@@ -1,0 +1,475 @@
+%Edited by ZH/YP, March 8, 2011 
+\chapter{Electricity and Magnetism}
+In this chapter, all units are SI.\\
+
+\noindent
+$e$ is the elementary electric charge\\
+$q$ is the total particle charge\\
+$Z$ is the particle atomic (proton) number\\
+$n$ is the particle density\\
+$U$ is energy\\
+$\mathbf{r}$ is the particle position\\
+$\mathbf{v}$ is the particle velocity\\
+$\rho$ is volumetric charge density\\
+$\sigma$ is surface charge density\\
+$\textbf{J}$ is volumetric current density\\
+$\textbf{K}$ is surface current density\\
+$\tau$ and $\sigma$ are the volume and surface, respectively\\
+$d\tau$, $d\boldsymbol{\sigma}$, and $d\textbf{l}$ are the volume, surface, and line elements, respectively\\
+b and f subscripts refer to bound and free charges
+
+\index{Electrostatics}
+\section{Electromagnetic in Vacuum}
+
+\index{Equations! Maxwell's}
+\index{Ampere's law}
+\index{Faraday's law}
+\index{Gauss's law}
+\index{Maxwell's equations! In vacuum}
+
+\subsection{Fundamental Equations}
+Maxwell's equations \scite{griffiths}{326}
+\flatwo{
+  \nabla &\cdot \textbf{E} = \rho / \epsilon_{0}  &  \nabla &\cdot \textbf{B}  = 0\hspace{4cm}\\
+  \nabla &\times \textbf{E} = - \frac{\partial \textbf{B}}{\partial t} & \nabla &\times \textbf{B} = \mu_{0} \textbf{J} + \mu_{0} \epsilon_{0} \frac{\partial \textbf{E}}{\partial t}
+}{4}
+
+%\index{Charge density}
+%\index{Current density}
+%\indent where
+%\flatwo{
+%  \rho &= \sum_{j} Z_{j} e n_{j} & \textbf{J} = \sum_{j} Z_{j} e n_{j} \textbf{v}_{j}
+%}{5}
+
+\index{Electric potential}
+\noindent
+Electrostatic scalar potential relations \scite{griffiths}{87}
+%\[ \sigma = \sum_{j} Z_{j} e n_{j} \delta \]
+\flatwo{
+  \textbf{E} &= - \nabla V & V &= -\int \textbf{E} \cdot d\textbf{l} \\
+  \nabla&^{2} V = -\frac{\rho}{\epsilon_{0}} & V &= \frac{1}{4 \pi \epsilon_{0}} \int \frac{\rho}{\textit{r}}\,d\tau
+}{5}
+
+\index{Magnetic vector potential}
+\noindent
+Electrostatic vector potential relations \scite{griffiths}{240}
+\fla{\textbf{B} &= \nabla \times \textbf{A} & \nabla^{2} \textbf{A} &= -\mu_{0} \textbf{J} &
+  \textbf{A} &= \frac{\mu_{0}}{4 \pi} \int \frac{\textbf{J}}{\textit{r}} d \tau&}
+
+\index{Energy stored in EM fields}
+\noindent
+Electromagnetic energy stored in the fields \scite{griffiths}{348}
+\fla{U_{\mathrm{em}} &= \frac{1}{2} \int \left( \epsilon_{0} E^{2} + \frac{1}{\mu_{0}} B^{2} \right) d \tau&}
+
+\index{Coulomb force}
+\noindent
+Coulomb Force \scite{griffiths}{59}
+\fla{\mathbf{F} &= \frac{q_1q_2}{4\pi\epsilon_0|\mathbf{r}_1-\mathbf{r}_2|^2} \, \frac{\mathbf{r}_1 - \mathbf{r}_2}{|\mathbf{r}_1 - \mathbf{r}_2|} &}
+
+\index{Lorentz force law}
+\noindent
+Lorentz force law \scite{griffiths}{204}
+\fla{\textbf{F} &= q \left(\textbf{E} + \textbf{v} \times \textbf{B} \right)&}
+
+\index{Biot-Savart law}
+\noindent
+Biot-Savart law \scite{griffiths}{215}
+\fla{\textbf{B} &= \frac{\mu_{0}}{4 \pi} \int \frac{\textbf{I} \times \hat{\textbf{r}}}{r^{2}} dl &}
+
+\subsection{Boundary Conditions}
+For given surface $\mathcal{S}$, + and - refer to above and below
+$\mathcal{S}$, respectively. $\hat{\textbf{n}}$ is a unit vector
+perpendicular to $\mathcal{S}$.\\
+
+\index{Electrostatic boundary conditions! In vacuum} 
+\noindent
+Electrostatic boundary conditions on $\textbf{E}$ \scite{griffiths}{179} 
+\fla{E^{\bot}_{+} - E^{\bot}_{-} &= \sigma / \epsilon_{0}&}
+\fla{E^{||}_{+}-E^{||}_{-} &= 0&}
+
+\index{Magnetic boundary conditions! In vacuum}
+\noindent Magnetostatic boundary conditions on $\textbf{B}$ \scite{griffiths}{241}
+\fla{B^{\bot}_{+} - B^{\bot}_{-} &= 0&}
+\fla{B^{||}_{+}-B^{||}_{-}& = \mu_{0}K&}
+\fla{\textbf{B}_{+} - \textbf{B}_{-} &= \mu_{0} \left( \textbf{K} \times \hat{\textbf{n}} \right)&}
+
+\section{Electromagnetics in Matter}
+
+\index{Maxwell's equations! In matter}
+
+\subsection{Fundamental Equations}
+Maxwell's equations in matter \scite{griffiths}{330}
+\flatwo{
+  \nabla &\cdot \textbf{D} = \rho_{f}  &  \nabla &\cdot \textbf{B} = 0 \\
+  \nabla &\times \textbf{E} = - \frac{\partial \textbf{B}}{\partial t} &\nabla &\times \textbf{H} = \textbf{J}_{f} + \frac{\partial \textbf{D}}{\partial t}
+}{4}
+
+\index{Polarization}
+\noindent
+The polarization in linear media ($\chi_{e}$ is the polarizability) \scite{griffiths}{179}
+\fla{ \textbf{P} &= \epsilon_{0} \chi_{e} \textbf{E} \hspace{0.5cm} \text{[electric dipole moments per m$^{-3}$]} &}
+
+\index{Magnetization}
+\noindent
+The magnetization in linear media ($\chi_{m}$ is the magnetization) \scite{griffiths}{274}
+\fla{ \textbf{M} &= \chi_{m} \textbf{H} \hspace{0.5cm} \text{[electric dipole moments per m$^{-3}$]} &}
+
+\index{Displacement electric field}
+\noindent 
+The displacement field \scite{griffiths}{175,180}
+\fla{\textbf{D} &= \epsilon_{0} \textbf{E} + \textbf{P} &\\
+  &= \epsilon \textbf{E} \hspace{0.5cm} \text{(linear media only where $\epsilon \equiv \epsilon_{0} (1 + \chi_{e})$)} &}
+
+\index{H-field}
+\noindent
+The H-field (Magnetic field) \scite{griffiths}{269,275}
+\fla{\textbf{H} &= \frac{1}{\mu_{0}} \textbf{B} -\textbf{M} &\\
+  &= \frac{1}{\mu} \textbf{B} \hspace{0.5cm} \text{(linear media only where $\mu \equiv \mu_{0} (1+\chi_{m})$)} &}
+
+\index{Bound electric charge}
+\noindent
+Associated bound charges ($\sigma_b$, $\rho_b$) and currents ($\mathbf{K}_b$, $\mathbf{J}_b$) \scite{griffiths}{167, 168, 267, 268}
+\flatwo{
+  \sigma_{b} &= \textbf{P} \cdot \hat{\textbf{n}} & \rho_{b} &= - \nabla \cdot \textbf{P} \\
+  \textbf{K}_{b} &= \textbf{M} \times \hat{\textbf{n}} &\textbf{J}_{b} &= \nabla \times \textbf{M}
+}{5}
+
+\index{Electrostatic boundary conditions! In matter}
+\index{Magnetic boundary conditions! In matter}
+\subsection{Boundary Conditions}
+For given surface $\mathcal{S}$, + and - refer to above and below
+$\mathcal{S}$, respectively. $\hat{\textbf{n}}$ is a unit vector
+perpendicular to $\mathcal{S}$. \scite{griffiths}{178, 273}\\
+
+\flatwo{
+  D^{\bot}_{+} - D^{\bot}_{-} &= \sigma_{f} & \textbf{D}^{||}_{+}-\textbf{D}^{||}_{-} &= \textbf{P}^{||}_{+}-\textbf{P}^{||}_{-}\\
+  H^{\bot}_{+}-H^{\bot}_{-} &=-\left(M^{\bot}_{+}-M^{\bot}_{-}\right) & \textbf{H}^{||}_{+}-\textbf{H}^{||}_{-} &= \textbf{K}_{f}\times \hat{\textbf{n}}
+}{2}
+
+\index{Dipoles}
+\section{Dipoles}
+In this section, $\textbf{p}$ and $\textbf{m}$ are electric and
+magnetic dipoles, respectively.  $\textbf{N}$ is the torque and
+$\textbf{F}$ is the force generated by the dipole.
+
+%%%%%%%%%%%%%%%% Check formula!%%%%%%%%%%%
+\begin{table*}[h!]
+  \begin{tabular} {l l l}
+    \hline
+    \T \B Definition \scite{griffiths}{149, 244}& Fields\scite{griffiths}{153, 155, 246} & Potentials\scite{griffiths}{166, 244} \\[3pt]
+    \hline
+    \hline
+    \T \multirow{2}{*}{ $\textbf{p} \equiv \int \textbf{r} \rho (\textbf{r}) d\tau$} &  $\textbf{E}_{dip} (\textbf{r}) = \frac{1}{4 \pi \epsilon_{0} r^{3}} \left[ 3( \textbf{p} \cdot \hat{\textbf{r}})\hat{\textbf{r}} - \textbf{p} \right]$ & \multirow{2}{*}{ $ V_{dip} = \frac{1}{4 \pi \epsilon_{0}} \frac{\textbf{p} \cdot \hat{\textbf{r}}}{r^{2}}$}\\[6pt]
+    & $ \textbf{E}_{dip} (r, \theta) = \frac{p}{4 \pi \epsilon_{0} r^{3}} \left( 2 \cos \theta \hat{\textbf{r}} + \sin\theta \hat{ \boldsymbol{\theta}} \right)$ &\\[10pt]
+    \multirow{2}{*} {$\textbf{m} \equiv I \int d\boldsymbol{\sigma}$} & $\textbf{B}_{dip} = \frac{\mu_{0}}{4 \pi r^{3}} \left[ 3( \textbf{m} \cdot \hat{\textbf{r}})\hat{\textbf{r}} - \textbf{m} \right]$ & \multirow{2}{*}{$\textbf{A}_{dip}(\textbf{r}) = \frac{\mu_{0}}{4 \pi} \frac{\textbf{m} \times \hat{\textbf{r}}}{r^{2}}$}\\[6pt]
+    \B &  $\textbf{B}_{dip} (r, \theta) = \frac{\mu_{0} m}{4 \pi r^{3}} \left( 2 \cos \theta \hat{\textbf{r}} + \sin\theta \hat{ \boldsymbol{\theta}} \right)$& \\
+    \hline
+    %Definition & $\textbf{p} \equiv \int \textbf{r}' \rho (\textbf{r}') d\tau'$& $\textbf{m} \equiv I \int d\textbf{a}$\\
+    %\multirow{2} {*} {Fields} & $\textbf{E}_{dip} (\textbf{r}) = \frac{p}{4 \pi \epsilon_{0} r^{3}} \left[ 3( \textbf{p} \cdot \hat{\textbf{r}})\hat{\textbf{r}} - \textbf{p} \right]$& $\textbf{B}_{dip} = \frac{\mu_{0}}{4 \pi r^{3}} \left[ 3( \textbf{m} \cdot \hat{\textbf{r}})\hat{\textbf{r}} - \textbf{m} \right]$\\
+    %& $ \textbf{E}_{dip} (r, \theta) = \frac{p}{4 \pi \epsilon_{0} r^{3}} \left( 2 cos \theta \hat{\textbf{r}} + sin\theta \hat{ \boldsymbol{\theta}} \right)$ &  $ \textbf{E}_{dip} (r, \theta) = \frac{\mu_{0} p}{4 \pi r^{3}} \left( 2 cos \theta \hat{\textbf{r}} + sin\theta \hat{ \boldsymbol{\theta}} \right)$\\
+    %Potentials & $ V_{dip} = \frac{1}{4 \pi \epsilon_{0}} \frac{\textbf{p} \cdot \hat{\textbf{r}}}{r^{2}}$& $\textbf{A}_{dip}(\textbf{r}) = \frac{\mu_{0}}{4 \pi} \frac{\textbf{m} \times \hat{\textbf{r}}}{r^{2}}$\\
+\end{tabular}
+\end{table*}
+
+\begin{table*}[h!]
+  \centering
+  \begin{tabular} {l l l}
+    \hline
+    Electric \scite{griffiths}{164, 165}\T\B& Magnetic\scite{griffiths}{257, 258, 281} \\
+    \hline\hline
+    \T$\textbf{F} = \left(\textbf{p} \cdot \nabla \right) \textbf{E}$ & $\textbf{F} = \nabla \left( \textbf{m} \cdot \textbf{B} \right)$ \\
+    $\textbf{N} = \textbf{p} \times \textbf{E}$ & $\textbf{N} = \textbf{m} \times \textbf{B}$\\
+    \B$\textrm{U}=-\textbf{p} \cdot \textbf{E}$ & $\textrm{U} = - \textbf{m} \cdot \textbf{B}$\\
+    \hline
+  \end{tabular}
+\end{table*}
+
+\index{Circuit electrodynamics}
+\section{Circuit Electrodynamics}
+
+\index{Ohm's law! Microscopic}
+\noindent Microscopic Ohm's law \scite{griffiths}{285}
+\fla{\textbf{J} &= \sigma_c \textbf{E}&}
+\indent where $\sigma_c$ is the conductivity. Resistivity, $\rho_r$, is defined as $\rho_r = 1/ \sigma_c$.\\
+
+\index{Ohm's law! Macroscopic}
+\noindent Macroscopic Ohm's law \scite{griffiths}{287}
+\fla{V &= IR &}
+\indent where V is the voltage, I is the current, and R is the resistance.\\
+
+\noindent
+The voltage due to a changing magnetic field (Faraday's Law) \scite{griffiths}{295, 296}, 
+\flatwo{
+  V &= - \frac {d \Phi}{dt} &
+  \Phi &= \!\!\!\!\!\int\limits_{surface}\!\!\!\!\! \textbf{B} \cdot d \textbf{A}&
+}{5}
+
+\index{Capacitance}
+\index{Inductance}
+\noindent
+Capacitance is written as C, and inductance is written as L. \cite{parker}
+\flatwo{
+  Q &= CV & \Phi &= L I &\\
+  I &= -C \frac{d V}{dt} & V &= - L \frac {dI}{dt} &
+}{4}
+
+\noindent
+Energy stored in capacitance and inductance \scite{griffiths}{106, 317}
+\fla{ U &= \frac{1}{2} L I^{2} + \frac{1}{2} C V^{2} &}
+
+
+\index{Conservation laws}
+\section{Conservation Laws}
+
+\index{Conservation of charge}
+\noindent Conservation of charge \scite{griffiths}{214}
+\fla{\frac{\partial \rho}{\partial t} &= - \nabla \cdot \textbf{J}&}
+
+\index{Poynting vector}
+\noindent
+Poynting vector \scite{griffiths}{347}
+\fla{ \textbf{S} & \equiv \frac{1}{\mu_{0}} \left( \textbf{E} \times \textbf{B} \right)&}
+
+\index{Poynting's theorem}
+\noindent
+Poynting's theorem (integral form) \scite{griffiths}{347}
+\fla{ \frac{dU}{dt} &= -\frac{d}{dt}\!\!\!\int\limits_\mathrm{volume}\!\!\! \frac{1}{2}\left(\epsilon_0E^2+\frac{1}{\mu_0}B^2\right)\,d\tau - \frac{1}{\mu_0}\!\!\!\!\oint\limits_\mathrm{surface}\!\!\!\!\left(\mathbf{E}\times\mathbf{B}\right)\cdot d\boldsymbol{\sigma} &}
+
+\noindent
+Poynting's theorem (differential form) \scite{griffiths}{348}
+\fla{ \frac{\partial}{\partial t}\left(U_\mathrm{mechanical}\ + U_\mathrm{em}\right) &= -\nabla\cdot\mathbf{S} &}
+
+\index{Maxwell's stress tensor}
+\noindent Maxwell's stress tensor \scite{griffiths}{352}
+\fla{T_{ij} & \equiv \epsilon_{0} \left( E_{i}E_{j} - \frac{1}{2} \delta_{ij}E^{2} \right) + \frac{1}{\mu_{0}} \left(B_{i} B_{j} -  \frac{1}{2} \delta_{ij}B^{2} \right)&}
+
+\index{Electromagnetic force density}
+\noindent
+Electromagnetic force density on collection of charges \scite{griffiths}{352}
+\fla{\mathbf{f} & = \nabla \cdot \overleftrightarrow{\textbf{T}} - \epsilon_{0} \mu_{0} \frac{\partial \textbf{S}} {\partial t}&}
+
+\noindent
+Total electromagnetic force on collection of charges \scite{griffiths}{353}
+\fla{\mathbf{F} &= \!\!\!\oint\limits_\mathrm{surface}\!\!\!\! \overleftrightarrow{\textbf{T}}\cdot\,d\boldsymbol\sigma - \epsilon_0\mu_0\frac{d}{dt}\!\!\!\!\int\limits_\mathrm{volume}\!\!\!\!\mathbf{S}\,d\tau &}
+
+\noindent
+Momentum density in electromagnetic fields \scite{griffiths}{355}
+\fla{ p_{em} &= \mu_{0} \epsilon_{0} \textbf{S}&}
+
+\noindent
+Conservation of momentum in electromagnetic fields \scite{griffiths}{356}
+\fla{\frac{\partial}{\partial t} \left( p_{mech} + p_{em} \right) &= \nabla \cdot \overleftrightarrow{\textbf{T}}&}
+
+\section{Electromagnetic Waves}
+
+\noindent
+In this section,\\
+
+\noindent
+$\lambda$ is the wavelength\\
+$k=2\pi / \lambda$ is the wave number\\
+$\nu$ is the frequency\\
+$\omega = 2 \pi\nu$ is the angular frequency\\
+$T = 1/ \nu$ is the period\\
+$\textbf{k} = k \hat{\textbf{k}}$ is the wave number vector\\
+$\hat{\textbf{n}}$ is the polarization vector in the direction of electric field\\
+$\tilde{\textbf{X}}$ is a complex vector\\
+
+\index{Wave equation}
+\index{Equations! Wave}
+\noindent
+The wave equation in three dimensions \scite{griffiths}{376}
+\fla{ \nabla^{2}f &= \frac{1}{v^{2}} \frac{\partial^{2} f}{\partial
+t^{2}} &}
+
+\noindent
+is satisfied by two transformations of Maxwell's equations in vacuum \scite{griffiths}{376}
+\flatwo{
+  \nabla ^{2} \textbf{E} &= \mu_{0} \epsilon_{0} \frac{ \partial^{2} \textbf{E}}{\partial t^{2}}& \nabla ^{2} \textbf{B} = \mu_{0} \epsilon_{0} \frac{ \partial^{2} \textbf{B}}{\partial t^{2}}
+}{4}
+
+\noindent
+These have sinusoidal solutions, but it is more convenient
+to work with imaginary exponentials and take the real parts \scite{griffiths}{379}
+\fla{\tilde{\textbf{E}}(\textbf{r}, t) &= \tilde {E_{0}} e^{i(\textbf{k} \cdot \textbf{r} - \omega t)}\hat{\textbf{n}} &}
+\fla{ \tilde{\textbf{B}}(\textbf{r}, t) &= \frac{1}{c} \tilde{E}_{0} e^{i(\textbf{k} \cdot \textbf{r} - \omega t)} ( \hat{\textbf{k}} \times \hat {\textbf{n}}) = \frac{1}{c} \hat{\textbf{k}} \times \tilde{\textbf{E}} &}
+
+\index{Radiation pressure}
+\index{Intensity}
+\begin{table*}[h!]
+\centering
+\begin{tabular}{ l c c}
+\multicolumn{3}{c}{EM Wave Relations \scite{griffiths}{381-382}}\\
+\hline
+\T \B Parameter & Symbol & Equation \\
+\hline
+\hline
+\T Averaged energy per unit volume & $\left< u \right> $& $\frac{1}{2} \epsilon_{0} E_{0}^{2}$\\[4pt]
+Averaged energy flux density & $\left<\textbf{S} \right>$& $\frac{1}{2} c \epsilon_{0} E^{2}_{0} \hat{\textbf{k}}$ \\[4pt]
+Averaged momentum density & $\left< \textit{P} \right> $ & $\frac{1}{2c} \epsilon_{0} E_{0}^{2} \hat{\textbf{k}}$\\[4pt]
+Intensity & I & $\left< S \right>$ \\[4pt]
+\B Radiation pressure & P & $ \frac{I}{c} $\\[4pt]
+\hline
+\end{tabular}
+\end{table*}
+
+\subsection{EM Waves in Matter}
+In this section, $\theta$ is measured from the normal to the surface\\
+
+\noindent Assuming no free charge or current in a linear media, the EM wave equations become \scite{griffiths}{383}
+\flatwo{
+  \nabla \cdot \textbf{E} &= 0 & \nabla \times \textbf{E} &= -\frac {\partial \textbf{B}}{\partial t} \\
+  \nabla  \cdot \textbf{B} &= 0 & \nabla \times \textbf{B} &= \mu \epsilon \frac{\partial \textbf{E}}{\partial t}
+}{5}
+
+\index{Speed of light in material}
+\noindent
+Speed of light in a material \scite{griffiths}{383}
+\fla{v &= \frac{1}{\sqrt{\epsilon \mu}} = \frac{c}{n} &}
+
+\index{Index of refraction}
+\noindent
+Index of refraction \scite{griffiths}{383}
+\fla{n & \equiv \sqrt{\frac{\epsilon \mu}{\epsilon_{0} \mu_{0}}} \approx \sqrt{\epsilon_{r}} &}
+
+\index{Intensity}
+\noindent
+Intensity \scite{griffiths}{383}
+\fla{ I &= \frac{1}{2} \epsilon v E^{2}_{0} &}
+
+\noindent
+Boundary conditions at a material surface  \scite{griffiths}{384}
+\flatwo{
+  \epsilon_{1} E_{1}^{\bot} &=\epsilon_{2} E_{2}^{\bot} & \textbf{E}_{1}^{||} &= \textbf{E}_{2}^{||}\\
+  B_{1}^{\bot} &= B_{2}^{\bot} &\frac{1}{\mu_{1}}  \textbf{B}_{1}^{||} &= \frac{1}{\mu_{2}} \textbf{B}_{2}^{||}
+}{5}
+
+\index{Reflection coefficient}
+\index{Transmission coefficient}
+\noindent 
+Reflection and transmission coefficients \scite{griffiths}{386}
+\fla{
+  R \equiv \frac{I_{ref}}{I_{inc}} &= \left( \frac{n_{1} - n_{2}}{n_{1}+n_{2}} \right) ^{2} &
+  T \equiv \frac{I_{trans}}{I_{inc}} &= \frac{4 n_{1} n_{2}}{\left( n_{1} +n_{2} \right)^{2}}&
+  R + T &= 1
+}
+
+\index{Snell's law}
+\noindent
+Snell's Laws for oblique incidence on material surface \scite{griffiths}{388}
+\fla{k_{inc} \sin \theta_{inc} &= k_{ref} \sin \theta_{ref} = k_{trans} \sin \theta_{trans}&}
+\fla{\theta_{inc} &= \theta_{ref}&}
+\fla{\frac{\sin \theta_{trans}}{\sin \theta_{inc}} &= \frac{n_{1}}{n_{2}} &}
+
+
+\index{Fresnel equations}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c c c}
+    \multicolumn{3}{c}{Fresnel Equations \scite{jackson}{305-306}}\\
+    \hline
+    \T Polarization to & \multirow{2}{*}{$E_{trans}/E_{inc}$} & \multirow{2}{*}{$E_{ref}/E_{inc} $}\\
+    \B incident plane & &\\
+    \hline\hline
+    \T \small{Perpendicular} & $\frac{ 2 n_{1} \cos \theta_{inc}} {n_{1} \cos \theta_{inc} +(\mu_{1}/ \mu_{2}) \sqrt{ n_{2}^{2}-n_{1}^{2} \sin^{2} \theta_{inc} } } $ & $\frac{n_{1} \cos \theta_{inc} - (\mu_{1} / \mu_{2}) \sqrt{n_{2}^{2}-n_{1}^{2} \sin^{2} \theta_{inc}}} {n_{1} \cos \theta_{inc} + (\mu_{1} / \mu_{2}) \sqrt{n_{2}^{2}-n_{1}^{2} \sin^{2} \theta_{inc} }} $ \\[15pt]
+
+    \B \small{Parallel} & $\frac{2 n_{1} n_{2} \cos \theta_{inc}} {(\mu_{1} / \mu_{2}) n_{2}^{2} \cos \theta_{inc} + n_{1} \sqrt{n_{2}^{2}-n_{1}^{2} \sin^{2} \theta_{inc}}} $ & $\frac{(\mu_{1} / \mu_{2}) n_{2}^{2} \cos \theta_{inc} - n_{1} \sqrt{n_{2}^{2}-n_{1}^{2} \sin^{2} \theta_{inc}}}{(\mu_{1} / \mu_{2}) n_{2}^{2} \cos \theta_{inc} + n_{1} \sqrt{n_{2}^{2}-n_{1}^{2} \sin^{2} \theta_{inc}}}$ \\[15pt]
+    \hline
+
+    \end{tabular}
+\end{table}
+
+\index{Brewster's angle}
+\noindent Brewster's angle (no reflection of perpendicular incidence wave) \scite{griffiths}{390}
+
+\fla{\sin^{2}  \theta_{B} &= \frac{1- \beta^{2}}{\left( n_{1}/n_{2} \right)^2 -\beta^{2}}&}
+
+where $\beta = \mu_{1}n_{2}/\mu_{2}n_{1}$\\
+
+\noindent If the wave is in a conductor, it will experience damping due to the presence of free charges, subject to $\textbf{J}_{f} = \sigma \textbf{E}$. Solving Maxwell's equations gives \scite{griffiths}{394}
+
+\fla{\tilde{k}^{2} &= \mu \epsilon \omega^{2} + i \mu \sigma \omega&}
+
+\noindent Decomposing gives real and imaginary  parts of the wave vector $\tilde{k} = k + i \kappa$
+
+\begin{flalign*}
+\indent 
+k & \equiv \omega \sqrt{\frac{\epsilon \mu}{2}} \left[ \sqrt{1 + \left( \frac{\sigma}{\epsilon \omega} \right)^{2}} + 1 \right]^{1/2} & \kappa & \equiv \omega \sqrt{\frac{\epsilon \mu}{2}} \left[\sqrt{1 + \left( \frac{\sigma}{\epsilon \omega} \right)^{2}} - 1 \right]^{1/2}
+\end{flalign*}
+\noindent Knowing the imaginary part of the wave number, allows to know the damping of the wave which is characterized by a skin depth or the e-folding length  $d \equiv 1/\kappa$. \scite{griffiths}{394}
+
+
+\section{Electrodynamics}
+
+We are allowed to choose $\nabla \cdot \textbf{A}$; two common gauges used are the Lorentz and Coulomb gauge. \scite{griffiths}{421-422}
+\index{Lorentz gauge}
+\index{Couloumb gauge}
+\begin{table}[h]
+  \centering
+  \begin{tabular} {l l l l}
+    \hline
+    \T \B Gauge & $\nabla \cdot \textbf{A}$ & V Equation & $\textbf{A}$ Equation \\
+    \hline
+    \hline
+    \T Lorentz & $-\mu_{0} \epsilon_{0} \frac{\partial V}{\partial t}$ & $\nabla^{2} V -\mu_{0} \epsilon_{0} \frac{\partial^{2} V}{\partial t^{2}} = - \frac{\rho}{\epsilon_{0}}$& $\nabla^{2} \textbf{A} -\mu_{0} \epsilon_{0} \frac{\partial^{2} \textbf{A}}{\partial t^{2}} = - \mu_{0} \textbf{J}$ \\[4pt]
+    \B Coulomb & $0$ & $\nabla^{2} V = -\frac{\rho}{\epsilon_{0}}$ & $\nabla^{2} \textbf{A} -\mu_{0} \epsilon_{0} \frac{\partial^{2} \textbf{A}}{\partial t^{2}} = -\mu_{0} \textbf{J} + \mu_{0} \epsilon_{0} \nabla \left( \frac{\partial V}{\partial t} \right)$ \\[4pt]
+    \hline
+\end{tabular}
+\end{table}
+
+\noindent For any scalar function $\lambda$, any potential formulation is valid if \scite{griffiths}{420}
+\flatwo{
+ \textbf{A}' &= \textbf{A} + \nabla \lambda & V' = V - \frac{\partial \lambda}{\partial t}
+}{5}
+
+\subsection{Fields of Moving Charges}
+In this section, $ \left|\left| A \right| \right| $ evaluates A at the retarded time \cite{parker}\\
+
+\index{Retarded time}
+\noindent
+Definition of retarded time \scite{griffiths}{423}
+\fla{t_{ret} &\equiv t - \frac{\left|\textbf{r}(t) - \textbf{r}(t_{ret}) \right|}{c}&}
+
+\index{Lienard-Wiechert potentials}
+\noindent
+The Lienard-Wiechert potentials \scite{griffiths}{432-433}
+\flatwo{ V &= \frac{q}{4 \pi \epsilon_{0}} \left| \left| \frac{1}{r \kappa} \right| \right| &
+  \textbf{A} = \frac{\mu_{0} q}{4 \pi} \left| \left| \frac{\textbf{v}}{r \kappa} \right| \right|
+}{5}
+
+\index{Electric field of a moving charge}
+\noindent
+Electric field of a moving point charge \scite{griffiths}{438}
+\fla{ \textbf{E} &= \frac{q}{4 \pi \epsilon_{0}} \left| \left| \left( \hat{\textbf{r}} - \textbf{v}/c \right) \left( 1 - v^2 / c^2 \right) \frac{1}{\kappa^{3} r^{2}} - \hat{\textbf{r}} \times \left( \left( \hat{\textbf{r}} - \textbf{v} / c \right) \times \textbf{a} /c \right) \frac{1}{ \kappa^{3} r c} \right| \right|&}
+
+\index{Magnetc field of a moving charge}
+\noindent
+Magnetic field of a moving point charge \scite{griffiths}{438}
+\fla{ \textbf{B} &= \left| \left| \hat{\textbf{r}} \right| \right| \times \textbf{E} / c &}
+\indent where $ \kappa = 1 - \boldsymbol{\hat{r}} \cdot \frac{\textbf{v}}{c}$.
+
+\subsection{Radiation by Charges}
+In this section, $\textbf{u} \equiv c \hat{\textbf{r}} - \textbf{v}$, $\gamma \equiv 1/ \sqrt{1- v^{2}/c^{2}}$ is the relativistic gamma
+factor, and \textbf{a} is the acceleration.\\
+
+\noindent Poynting vector associated with a moving charge \scite{griffiths}{460}
+\fla{ \textbf{S} &= \frac{1}{\mu_{0} c} \left[ E^2 \hat{\textbf{r}} - \left( \hat{\textbf{r}} \cdot \textbf{E} \right) \textbf{E} \right]&}
+
+\noindent Non-relativistic power radiated by a moving charge \scite{griffiths}{462}
+\fla{P &= \frac{\mu_{0} q^{2} a^{2}}{6 \pi c}&}
+
+\noindent Relativistic power radiated by a moving charge per solid angle \scite{griffiths}{463}
+\fla{ \frac{dP}{d \Omega} &= \frac{q^2}{16 \pi^2 \epsilon_{0}} \frac{ \left| \hat{\textbf{r}} \times \left( \textbf{u} \times \textbf{a} \right) \right|^{2}}{ \left( \hat{\textbf{r}} \cdot \textbf{u} \right)^{5}}&}
+Relativistic power radiated by a moving charge\scite{griffiths}{463}
+\fla{ P &= \frac{\mu_{0} q^{2} \gamma^{6}}{6 \pi c} \left( a^{2} - \left| \frac{\textbf{v} \times \textbf{a}}{c} \right|^{2} \right)&}
+Relativistic force of a moving charge \scite{griffiths}{467}
+\fla{\textbf{F}_{rad} &= \frac{\mu_{0} q^{2}}{6 \pi c} \frac{d\textbf{a}}{dt}&}
+
+%\begin{tabular}{ c c}
+%Average energy & $\left< u \right> = \frac{1}{2} \epsilon_{0} E_{0}^{2}$ \\
+%Average Poynting Vector & $\left< \textbf{S} \right> = \frac{1}{2} c 
+%\end{tabular}
+
+%\begin{tabular} {l l}
+%\epsilon_{1} E^{\bot}_{1} - \epsilon_{2} E^{\bot}_{2} = 0
+%\end{tabular}

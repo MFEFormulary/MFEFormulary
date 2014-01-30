@@ -1,0 +1,136 @@
+% name: MFEFormulary.tex
+% date: 10 Jan 14
+% auth: Zach Hartwig and Yuri Podpaly
+%
+% desc: This is the top-level LaTeX file for the Magnetic Fusion
+%       Energy Formulary. All required packages, options, commands,
+%       and so forth are defined here. Each chapter is split into
+%       seperate *.tex files that are included via standard LaTeX
+%       commands. Finally, this file also controls building the index
+%       and bibliography.
+
+\documentclass[11pt]{book}
+\usepackage{enumerate}
+\usepackage{amsmath} 
+\usepackage{amssymb} 
+\usepackage{amsbsy}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{makeidx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fix-cm}
+\usepackage{rotating}
+\usepackage[table,svgnames]{xcolor}
+\usepackage[super]{natbib}
+\usepackage{multicol}
+\usepackage{tocloft}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  filecolor=black,
+  urlcolor=blue,
+  linktocpage
+}
+
+% This is a pro'n'shit move if I do say so myself.  Prints ``draft''
+% in light gray in background of all pages. Uncomment when needed
+%\special{
+%  ! userdict begin /bop-hook{
+%    stroke
+%    gsave 220 170 translate
+%    55 rotate /Times-Roman findfont 250 scalefont setfont
+%    0 0 moveto 0.95 setgray (Draft) show grestore
+%  }def end}
+
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.5in}
+
+% Create the index
+\makeindex
+
+% Custom math alignment command for one-equation-per-line
+\newcommand{\fla}[1]{
+  \begin{flalign*}
+    \indent
+    #1
+  \end{flalign*}
+}
+
+% Custom math alignment command for two-equations-per-line.  The
+% second argument is the ``buffer space'' between the end of the
+% second equation and the right-hand margin that should be set
+% manually for good-looking alignment.  This is a bit hacky, but it
+% works for the limited number of two-equations-per-line.
+\newcommand{\flatwo}[2]{
+  \begin{flalign*}
+    \indent
+    #1
+    \hspace{#2 cm}
+  \end{flalign*}
+}
+
+% Custom citation command to put (reference number - page number) in
+% superscript next to the equation name
+\newcommand{\scite}[2]{
+  \textnormal{\cite{#1}$^{:\,#2}$}
+}
+
+% Commands for table spacing 
+\newcommand\T{\rule{0pt}{3.5ex}}
+\newcommand\B{\rule[-2.0ex]{0pt}{0pt}}
+
+
+\begin{document}
+
+\frontmatter
+
+\pagenumbering{gobble}
+\include{title}
+\titleAT
+\newpage
+\pagenumbering{arabic}
+
+\setcounter{tocdepth}{1}
+
+\mainmatter
+
+\include{preface}
+\include{information}
+\tableofcontents
+\include{mathematics}
+\include{unitsAndConstants}
+\include{EM}
+\include{singleParticle}
+\include{plasmaDefAndPar}
+\include{plasmaModels}
+\include{transport}
+\include{waves}
+\include{nuclearPhysics}
+\include{tokamakPhysics}
+\include{tokamakEdgePlasma}
+\include{tokamakFusionPower}
+\include{tokamaks}
+
+\backmatter
+
+\renewcommand\bibname{References}
+\bibliographystyle{plainnat}
+\bibliography{MFEFormulary}
+
+% Add the References section to the table of contents
+\addcontentsline{toc}{chapter}{References}
+
+% Bit of a hack required to add the Index section to the table of contents
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+
+\end{document} 

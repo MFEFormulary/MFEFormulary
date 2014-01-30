@@ -1,0 +1,227 @@
+\chapter{Transport}
+In this chapter, all units are SI with the exception of temperature,
+which is defined in the historical units of eV (electron-volts).\\
+
+\noindent
+$e$ is the elementary electric charge\\
+$Z$ is the atomic (proton) number\\
+$m$ is the particle mass\\
+$n$ is the number density; $n_{20}=n/10^{20}$\\
+$\mathbf{v}$ is the particle velocity vector\\
+$\rho$ is the plasma mass density\\
+$T$ is the plasma temperature\\
+$\chi$ is the thermal diffusivity\\
+$q$ is the heat flux\\
+$||$ and $\perp$ indicate parallel and perpendicular to $\textbf{B}$\\
+$a$ and $R_0$ are the minor and major radii of a toroidal plasma\\
+$S$ is a general source term \\
+
+
+\index{Classical transport}
+\section{Classical Transport}
+
+\index{Equations! 1D cylindrical diffusion}
+\subsection{Diffusion Equations in a 1D Cylindrical Plasma}
+If the following approximations are made to the MHD single fluid equations \scite{freidberg-PP}{451-453}
+\begin{enumerate}
+  \item{neglect inertial terms: $\rho\frac{\partial \textbf{v}}{\partial t} = 0$}
+  \item{split resistivity into components: $\eta\textbf{J} \rightarrow \eta_\perp\textbf{J}_\perp + \eta_\parallel\textbf{J}_\parallel$}
+  \item{equate electron and ion temperature: $T_e \approx T_i \equiv T$}
+  \item{introduce the low-$\beta$ tokamak expansion: $B_z(r,t) = B_0 + \delta B_z(r,t)$ where $B_0$ is a constant and $\delta B_z \ll 1$}
+\end{enumerate}
+then a short calculation leads a set of diffusion-like transport equations
+\newline\newline
+\noindent
+Particles \scite{freidberg-PP}{453}
+\begin{align*}
+  \frac{\partial n}{\partial t} &= \frac{1}{r}\frac{\partial}{\partial r} \left[rD_n\left(\frac{\partial n}{\partial r} + \frac{n}{T}
+    \frac{\partial T}{\partial r} + \frac{2\eta_\parallel}{\beta_p\eta_\perp}\frac{n}{rB_\theta}\frac{\partial (rB_\theta)}{\partial r}\right)\right] &
+  D_n = \frac{2nT\eta_\perp}{B_0^2}
+\end{align*}
+\indent where the poloidal beta is $\beta_p = 4\mu_0nT/B_\theta^2 \sim 1$
+\newline\newline
+\noindent
+Temperature \scite{freidberg-PP}{453}
+\fla{ 3n\frac{\partial T}{\partial t} &= \frac{1}{r}\frac{\partial}{\partial r}\left(rn\chi\frac{\partial T}{\partial r}\right) + S &}
+
+\noindent
+Magnetic field \scite{freidberg-PP}{453}
+\flatwo{
+  \frac{\partial(rB_\theta)}{\partial t} &= r\frac{\partial}{\partial r}\left(\frac{D_B}{r}\frac{\partial (rB_\theta)}{\partial r}\right) &
+  D_B = \frac{\eta_\parallel}{\mu_0}
+}{4}
+
+\index{Particle transport coefficients! Classical}
+\subsection{Classical Particle Diffusion Coefficients}
+Classical particle diffusion results from coulomb collisions.  No
+shift in the center of mass occurs for like-particle collisions;
+therefore, $D = 0$ for \textit{like}-particles and only
+\textit{unlike}-particle collisions lead to particle diffusion,
+implying $D_n^{electrons} = D_n^{ions}$.\\
+
+\noindent
+Net momentum electron-ion exchange collision frequency \scite{freidberg-PP}{217}
+\fla{\bar{\nu}_{ei} &= \sqrt{\frac{2}{\pi}}\frac{\omega_{pe}}{\Lambda}\ln\Lambda \approx 1.8\times10^5\frac{n_{20}}{T_\mathrm{keV}^{3/2}} &}
+
+\index{Random walk diffusion coefficient}
+\noindent
+Random walk diffusion coefficient \scite{freidberg-PP}{462}
+\fla{& D_\mathrm{rw} = 4\frac{\bar{\nu}_{ei} m_e T_e}{e^2B_0^2} \sim \frac{r_{Le}^2}{\bar{\tau}_{ei}} &}
+
+\noindent
+Fluid model diffusion coefficient \scite{freidberg-PP}{463}
+\fla{ D_\mathrm{fm} &= \frac{2nT\eta_\perp}{B_0^2} = 2\frac{\bar{\nu}_{ei} m_e T_e}{e^2B_0^2} &}
+
+\index{Braginskii diffusion coefficient}
+\noindent
+Braginskii diffusion coefficient \scite{freidberg-PP}{463}
+\fla{ D_\mathrm{Brag} &= 2.0\times10^{-3} \frac{n_{20}}{B_0^2 T_\mathrm{keV}^{1/2}} \hspace{0.5cm} \text{[m$^2$/s]} &}
+
+\index{Collision operators}
+\subsection{The Collision Operator}
+In this section, Einstein summation notation ($A_{a}B_{a} =
+\sum\limits_{a} A_{a}B_{a}$) is used, and
+$\textbf{u}\equiv\textbf{v}-\textbf{v}'$, and $d^3v'$ is a
+differential volume element in velocity space.
+
+\index{Fokker-Planck collision operator}
+\noindent
+The Fokker-Planck form of the collision operator \scite{helander}{29}
+\fla{C_{ab}(f_a, f_b ) &= \frac{\partial}{\partial v_k} \left[ A_{k}^{ab}f_a +\frac{\partial}{\partial v_{l}} (D_{kl}^{ab}f_{a} ) \right] &}
+\noindent where \scite{helander}{28-29}
+\fla{A_{k}^{ab} &\equiv \left(1+\frac{m_a}{m_b}\right) L^{ab}\frac{\partial \phi_{b}}{\partial v_{k}}&}
+\fla{D_{kl}^{ab} &\equiv -L^{ab} \frac{\partial^{2} \psi_{b}}{\partial \nu_{k} \partial v_{l}} &}
+\fla{L^{ab} &\equiv \left( \frac{Z_{a} Z_{b} e^2}{m_{a} \epsilon_{0}} \right) \ln \Lambda &}
+\fla{\phi_{b}(\textbf{v}) &\equiv - \frac{1}{4 \pi} \int{\frac{1}{u} f_{b}(\textbf{v}') d^{3}v'} &}
+\fla{\psi_{b}(\textbf{v}) &\equiv - \frac{1}{8 \pi} \int{u f_{b}(\textbf{v}') d^{3}v'} &}
+
+\index{Rosenbluth collision operator}
+\noindent Rosenbluth form of the collision operator (general) \scite{helander}{30}
+\fla{C_{ab}(f_a, f_b) &= -\frac{Z_{a}^{2} Z_{b}^{2} e^{4} \ln \Lambda}{8 \pi \epsilon_{0}^2 m_{a}} \frac{\partial}{\partial v_{k} } \int{ U_{kl} \left[ \frac{f_{a}(\textbf{v})}{m_{b}} \frac{\partial f_{b}(\textbf{v}')}{\partial v_{l}'} - \frac{f_{b}(\textbf{v}')}{m_{a}} \frac{\partial f_{a}(\textbf{v})}{\partial v_{l}} \right]}\,d^3v'&}
+\indent where \scite{helander}{29}
+\fla{U_{kl} & \equiv \frac{u^2 \delta_{kl} - u_k u_l}{u^3} &}
+
+\noindent Rosenbluth form of the collision operator (Maxwellian plasma) \scite{helander}{37}
+\fla{C_{ab}(f_a, f_{b0}) &= \nu_{D}^{ab} \mathcal{L}(f_{a}) + \frac{1}{v^2}\frac{\partial}{\partial v}\left[ v^3 \left( \frac{m_{a}}{m_a +m_b} \nu_{s}^{ab} f_{a} + \frac{1}{2} \nu_{||}^{ab} v \frac{\partial f_{a}}{\partial v} \right) \right] &}
+
+\indent where $x_\alpha=v/v_{Th\alpha} $ and \scite{helander}{38}
+\fla{ \mathcal{L}(f_a) &\equiv \frac{1}{2}\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial f_a}{\partial\theta}\right) + \frac{1}{sin^2\theta}\frac{\partial f_a}{\partial \phi}\right] &}
+\fla{ G(x) &\equiv \frac{\phi(x)-x\phi'(x)}{2x^2} = \left\{
+  \begin{gathered}
+    \frac{2x}{3\sqrt{\pi}} \hspace{0.5cm} x\rightarrow0\\
+    \frac{1}{2x^2} \hspace{0.5cm} x\rightarrow\infty\\
+  \end{gathered} \right.
+  &
+}
+\fla{ \nu_{D}^{ab} (v) &= \hat{\nu}_{ab} \frac{\mathrm{erf}(x_{b}) -G(x_{b})}{x_{a}^{3}} &}
+\fla{ \nu_{s}^{ab} (v) &= \hat{\nu}_{ab} \frac{2 T_{a}}{T_{b}} \left( 1 + \frac{m_{b}}{m_{a}}\right) \frac{G(x_{b})}{x_{a}} &}
+\fla{ \nu_{||}^{ab}(v) &= 2 \hat{\nu}_{ab} \frac{G(x_{b})}{x_{a}^3} &}
+\fla{ \hat{\nu}_{ab} &= \frac{n_{b} Z_{a}^2 Z_{b}^2 e^{4} \ln \Lambda}{4 \pi \epsilon_{0}^{2} m_{a}^{2} v_{Tha}^{3}} &}
+
+\index{Crook collision operator}
+\noindent Krook collision operator \scite{helander}{84}
+\fla{C(f) &= \nu (f_{0} - f) &}
+
+\hangindent=0.25in where $\nu$ is chosen as some characteristic collision time and $f_{0}$ is a base distribution frequency, which is often chosen to be a Maxwellian.\\
+
+\index{Thermal diffusivities (Classical)}
+\subsection{Classical Thermal Diffusivities}
+\noindent
+Random walk thermal diffusivities \scite{freidberg-PP}{464}
+\fla{ \chi_i &= \frac{1}{4}\frac{v_{ti}^2}{\Omega_i^2 \bar{\tau}_{ii}} \sim \frac{r_{Li}^2}{\bar{\tau}_{ii}} &}
+\fla{ \chi_e &= \frac{1}{4}\frac{v_{te}^2}{\Omega_e^2 \bar{\tau}_{ee}} \sim \frac{r_{Le}^2}{\bar{\tau}_{ee}} &}
+\index{Braginskii thermal diffusivity coefficients}
+Braginskii Thermal Diffusivity Coefficients (50\%-50\% D-T plasma) \scite{freidberg-PP}{465}
+\fla{ \chi_i &= 0.10\frac{n_{20}}{B_0^2T_k^{1/2}} \hspace{0.5cm} \text{[m$^2$/s]} &}
+\fla{ \chi_e &= 4.8\times10^{-3}\frac{n_{20}}{B_0^2T_\mathrm{keV}^{1/2}} \hspace{0.5cm} \text{[m$^2$/s]} &}
+
+\index{Neoclassical transport}
+\section{Neoclassical Transport}
+The following formulae are only valid in the so-called ``banana
+regime'' of tokamak confinement devices, where a significant fraction
+of confined particles undergo magnetic mirroring due to inhomogeneity
+of the magnetic fields.
+
+\subsection{Passing Particles}
+Half-transit time \scite{freidberg-PP}{480}
+\fla{ \tau_{1/2} &= \frac{l}{v_\parallel} = \frac{\pi R_0 q}{v_\parallel} &}
+Drift Velocity \scite{freidberg-PP}{481}
+\fla{ \textbf{v}_D &= \frac{m_i}{eB}\left(v_\parallel^2 + \frac{v_\perp}{2}\right)\frac{\textbf{R}_c \times \textbf{B}}{R_c^2B} 
+\approx \frac{1}{\Omega_i R_0}\left(v_\parallel^2 + \frac{v_\perp}{2}\right)(\boldsymbol{\hat{r}}\sin\theta + \boldsymbol{\hat{\theta}}\cos\theta) &}
+
+\subsection{Trapped Particles}
+In this section, $q$ is the tokamak safety factor.\\
+
+\noindent
+The minimum (inboard) and maximum (outboard) magnetic fields \scite{freidberg-PP}{484}
+\flatwo{B_{\textrm{min}} &= B_0\frac{R_0}{R_0 + a} & B_{\textrm{max}} = B_0\frac{R_0}{R_0 - a}}{5}
+
+\index{Trapped particle condition}
+\noindent
+Trapped particle condition  \scite{freidberg-PP}{484}%(See Section 5.1.4)% (!Make this a reference! ZSH))
+\fla{ \frac{v_\parallel^2}{v^2} < 1 - \frac{B_{\textrm{min}}}{B_{\textrm{max}}} &= 1 - \frac{R_0 - a}{R_0 + a} \approx 2\frac{a}{R_0} &}
+
+\noindent
+Fraction of trapped particles (maxwellian distribution $\mathcal{F}_\mathrm{M}$) \scite{freidberg-PP}{485}
+\fla{ \mathcal{F}_\mathrm{trapped} &= \frac{1}{n}\int_{\theta_c}^{\pi-\theta_c}\sin\theta d\theta \int_0^{2\pi} d \phi \int_0^\infty \mathcal{F}_\mathrm{M}(v) v^2 dv = 
+   \cos\theta_c \approx \left(\frac{2a}{R_0}\right)^{1/2} &}
+
+\noindent
+Half-bounce time\scite{freidberg-PP}{487}
+\fla{ \tau_{1/2} &\approx \frac{l}{v_\parallel} \approx \frac{2l}{v_\parallel} \approx \frac{2\pi R_0q}{v_\parallel} &}
+
+\index{Bounce frequency}
+\noindent
+Full-bounce frequency \scite{freidberg-PP}{487}
+\fla{ \omega_B &= \frac{v_\parallel}{2R_0q} &}
+
+\noindent
+Mean square step size (random walk model) \scite{freidberg-PP}{488}
+\fla{ (\Delta l)^2 &= \langle(\Delta r)^2\rangle = 4\frac{|v_{D}|^2}{\omega_B^2}\langle\cos^2\theta_0\rangle = 2\frac{q^2v^4}{\Omega_i^2 v_\parallel^2} &}
+
+\noindent
+Mean step size (averaged over velocity) \scite{freidberg-PP}{488}
+\fla{ (\Delta l)^2 &\approx 3\left(q^2\frac{R_0}{a}\right)\frac{v_{ti}^2}{\Omega_i^2} \sim \left(q^2\frac{R_0}{a}\right)\rho_{Li}^2 &}
+\indent where it has been assumed that 
+\flatwo{v^2\sim\frac{3T}{m} &= \frac{3}{2}v_{ti}^2 & v_\parallel^2\approx \frac{a}{R_0}v^2 &\sim \frac{a}{2R_0}3v_{ti}^2}{3}
+
+\index{Particle transport coefficients! Neoclassical}
+\subsection{Trapped Particle Neoclassical Transport Coefficients}
+
+\noindent
+Random walk model neoclassical diffusion coefficient \scite{freidberg-PP}{489}
+\fla{ D_n^{NC} &= f\frac{\langle(\Delta r)^2\rangle}{\tau_\mathrm{eff}} = 5.2q^2\left(\frac{R_0}{a}\right)^{3/2}\left(\frac{2m_eT_e}{e^2B_0^2\bar{\tau}_{ei}}\right)
+= 5.2q^2\left(\frac{R_0}{a}\right)^{3/2}D_n^{CL} \hspace{0.5cm} \text{[m$^2$/s]} &}
+
+\noindent
+Neoclassical diffusion coefficient (Rosenbluth, Hazeltine, and Hinton) \scite{freidberg-PP}{489}
+\fla{ D_n^{NC} &= 2.2q^2\left(\frac{R_0}{a}\right)^{3/2}D_n^{CL} &}
+
+\noindent
+Thermal diffusivities (Rosenbluth, Hazeltine, and Hinton) \scite{freidberg-PP}{489}
+\fla{ \chi_i^{NC} &= 0.68q^2\left(\frac{R_0}{a}\right)^{3/2} \chi_i^{CL} = 0.068q^2\left(\frac{R_0}{a}\right)^{3/2}\left(\frac{n_{20}}{B_0^2T_\mathrm{keV}^{1/2}}\right) \hspace{0.5cm} \text{[m$^2$/s]} &}
+\fla{ \chi_e^{NC} &= 0.89q^2\left(\frac{R_0}{a}\right)^{3/2} \chi_e^{CL} = 4.3\times10^{-3}q^2\left(\frac{R_0}{a}\right)^{3/2}\left(\frac{n_{20}}{B_0^2T_\mathrm{keV}^{1/2}}\right) \hspace{0.5cm} \text{[m$^2$/s]} &}
+
+
+\subsection{Transport regime criteria}
+
+\index{Collisionality}
+\index{$\nu_*$}
+\noindent
+Definition of collisionality \scite{helander}{149}
+\fla{\nu^{*} &\equiv \nu q R / v_{t} \epsilon^{3/2}&}
+
+\index{Banana regime}
+\noindent
+The banana regime \scite{helander}{149}
+\fla{\nu q R/ v_{T} &\ll \epsilon^{3/2} &}
+
+\index{Plateau regime}
+\noindent
+The plateau regime \scite{helander}{149}
+\fla{\epsilon^{3/2} &\ll\nu q R/ v_{T} \ll 1 &}
+
+\index{Pfirsch-Schluter regime}
+\noindent
+The Pfirsch-Schluter regime \scite{helander}{149}
+\fla{\nu q R/ v_{T} &\gg 1 &}

@@ -1,0 +1,254 @@
+\chapter{Plasma Parameters and Definitions}
+In this chapter, all units are SI with the exception of temperature,
+which is defined in the historical units of eV (electron-volts).\\
+
+\noindent
+$e$ is the elementary electric charge\\
+$Z$ is atomic (proton) number\\
+$m$ is the particle mass\\
+$e$ and $i$ subscripts refer to electrons and ions, respectively\\
+$B$ is the magnetic field\\
+$n$ is the particle density; $n_{20}$ = $n/10^{20}$\\
+$T$ is temperature; $T_\mathrm{keV}$ = $T$ in units of kiloelectron-volts\\
+
+
+\section{Single Particle Parameters}
+
+\index{Thermal speed}
+\noindent
+Thermal speed\footnote{Some references define thermal speed with an
+  additional factor of $\sqrt{2}$. The definition given here results
+  in $v_t$ being the standard deviation of a Gaussian distribution,
+  which is the widely used convention in statistics and mathematical
+  physics. In either case, it's just a question of how the factor of
+  ``1/2'' in the exponential term of the Gaussian distribution is
+  treated.}
+
+\flatwo{ \indent v_{te} &= \left(\frac{T_e}{m_e}\right)^{1/2} & v_{ti}
+  &= \left(\frac{T_i}{m_i}\right)^{1/2} & }{4}
+
+
+\index{Plasma frequencies}
+\noindent
+Plasma frequencies [radians/s] \scite{freidberg-PP}{135}
+\flatwo{
+  \indent
+  \omega_{pe} &= \left(\frac{n_ee^2}{m_e\epsilon_0}\right)^{1/2} &
+  \omega_{pi} = \left(\frac{n_i(Z_ie)^2}{m_i\epsilon_0}\right)^{1/2} 
+}{4}
+
+\index{Cyclotron frequency! in plasmas}
+\noindent
+Cyclotron frequencies [radians/s] \scite{freidberg-PP}{134}
+\flatwo{
+  \indent
+  \Omega_e &= \frac{eB}{m_e} &
+  \Omega_i = \frac{Z_ieB}{m_i} 
+}{5.5}
+
+\index{Gyro radius! in plasmas}
+\noindent
+Gyro radii [m] \scite{freidberg-PP}{134}
+\flatwo{
+  \indent
+  \rho_{Le} &= \frac{(2m_eT_e)^{1/2}}{eB} &
+  \rho_{Li} = \frac{(2m_iT_i)^{1/2}}{Z_ieB} 
+}{4.5}
+
+\noindent
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{c c c c}
+    \multicolumn{4}{c}{Single particle parameters as functions of magnetic field $B$ [T],}\\
+    \multicolumn{4}{c}{density $n_{20}$ [m$^{-3}$], and temperature $T$ [keV]~~\cite{authors}}\\
+    \hline
+    Particle \T\B& Plasma frequencies $\left[ ^{\omega}_{f} \right]$ & Cyclotron frequencies $\left[^{\omega}_{f}\right]$ & Gyro radii [m]\\
+    \hline\hline
+    electron \T& $5.641\times 10^{11}~n_{20}^{1/2}$ rad/s & $ 1.759\times 10^{11}~B$ rad/s & 1.066$\times10^{-4}\frac{T_\mathrm{keV}^{1/2}}{\textrm{B}}$\\
+             & 89.779 $n_{20}^{1/2}$ GHz                  & 28.000 $B$ GHz                 &                                        \\[4pt]
+    proton   & $1.316\times 10^{10}~n_{20}^{1/2}$ rad/s   & $ 9.579\times 10^7~B$ rad/s    & 4.570$\times10^{-3}\frac{T_\mathrm{keV}^{1/2}}{\textrm{B}}$\\
+             & 2.094 $n_{20}^{1/2}$ GHz                   & 15.241 $B$ MHz                 &                                        \\[4pt]  
+    deuteron & $9.312\times 10^9~n_{20}^{1/2}$ rad/s      & $ 4.791\times 10^7~B$ rad/s    & 6.461$\times10^{-3}\frac{T_\mathrm{keV}^{1/2}}{\textrm{B}}$\\
+             & 1.482 $n_{20}^{1/2}$ GHz                   & 7.626 $B$ MHz                  &                                        \\[4pt]
+    triton   & $7.609\times 10^9~n_{20}^{1/2}$ rad/s      & $ 3.200\times 10^7~B$ rad/s    & 7.906$\times10^{-3}\frac{T_\mathrm{keV}^{1/2}}{\textrm{B}}$\\
+             & 1.211 $n_{20}^{1/2}$ GHz                   & 5.092 $B$  MHz                 &                                        \\[4pt]
+    helion   & $7.610\times 10^{9}~n_{20}^{1/2}$ rad/s    & $ 6.400\times 10^7~B$ rad/s    & 3.952$\times10^{-3}\frac{T_\mathrm{keV}^{1/2}}{\textrm{B}}$\\
+             & 1.211 $n_{20}^{1/2}$ GHz                   & 10.186 $B$ MHz                 &                                        \\[4pt]
+    alpha    & $6.605\times 10^{9}~n_{20}^{1/2}$ rad/s    & $ 4.822\times 10^7~B$ rad/s    & 4.554$\times10^{-3}\frac{T_\mathrm{keV}^{1/2}}{\textrm{B}}$\\
+             \B& 1.051 $n_{20}^{1/2}$ GHz                 & 7.675 $B$ MHz                  &                                        \\[4pt]
+    \hline
+    \end{tabular}
+  \label{Table:plasmaFreq}
+\end{table}
+
+\section{Plasma Parameters}
+
+\index{Debye length}
+\noindent
+Debye length \scite{freidberg-PP}{125}
+\fla{
+  \frac{1}{\lambda_D^2} &= \frac{1}{\lambda_{De}^2}+\frac{1}{\lambda_{Di}^2} = \frac{e^2n_0}{\epsilon_0T_e} + \frac{e^2n_0}{\epsilon_0T_i} &\\
+  \lambda D_e &\approx \left(\frac{\epsilon_0T_e}{e^2n_0}\right)^{1/2} = 2.35\times10^{-5}\left(\frac{T_{\textrm{keV}}}{n_{20}}\right)^{1/2} \hspace{0.5cm} \mathrm{[m]} &
+}
+
+\noindent
+Debye-shield ion potential (spherical coordinates) \scite{wesson}{37}
+\fla{ V &= \frac{e}{4\pi\epsilon_0r}e^{-r / \lambda_D} &}
+
+\index{Debye sphere}
+\noindent
+Volume of a Debye sphere~~\cite{authors}
+\fla{ \mathcal{V}_D &= \frac{4}{3}\pi\lambda_D^3 &}
+
+\index{Plasma parameter}
+\noindent
+Plasma parameter \scite{freidberg-PP}{133}
+\fla{
+  \Lambda_D &= \mathcal{V}_D n_0 = \frac{4}{3}\pi \left(\frac{\epsilon_0 T_e}{e^2n_0}\right)^{3/2}n_0 \approx 5.453\times10^6\frac{T_{\textrm{keV}}^{3/2}}{n_{20}^{1/2}} &
+}
+
+\index{Z$_\mathrm{eff}$}
+\noindent
+Effective plasma charge \scite{freidberg-PP}{56}
+\fla{Z_\mathrm{eff} &= \frac{\sum \limits_\mathrm{all~ions} n_jZ_j^2}{\sum\limits_\mathrm{all~ions} n_jZ_j} = \frac{1}{n_e}\sum\limits_\mathrm{all~ions} n_jZ_j^2 &}
+
+\section{Plasma Speeds}
+In this section, $\rho_{0}$ is the mass density of the plasma, $p_0$
+is the plasma pressure, and $\gamma$ is the adiabatic index.\\
+
+\index{Alfv\'en speed}
+\noindent
+Alfv\'en speed \scite{freidberg-PP}{314}
+\fla{v_{a} &= (B_{0}^{2}/\mu_{0} \rho_{0})^{1/2} &}
+
+\index{Sound speed}
+\noindent
+Sound speed \scite{chen}{96, 67}
+\fla{ c_\mathrm{s} &\approx \left( \frac{Z T_\mathrm{e}+\gamma T_\mathrm{i}}{m_\mathrm{i}} \right) ^ {1/2} &}
+\indent
+where
+\fla{ \gamma &= 1 \text{ (isothermal flow)} &\\
+      \gamma &= \frac{2+N}{N} \text{ (N is the number of degrees of freedom)} &\\}
+
+\index{Mach number}
+\noindent
+Plasma mach number \scite{chen}{298}
+\fla{M &\equiv \frac{v_\text{plasma}}{c_s} &}
+
+
+\section{Fundamentals of Maxwellian Plasmas}
+
+\index{Maxwellian distribution function}
+\noindent
+General Maxwellian velocity distribution function \scite{stangeby}{64-65}
+\fla{\mathcal{F}_M(v_x,v_y,v_z) &= \mathcal{F}_M(\mathbf{v}) = C \exp\left(-\frac{bm}{2}\left[(v_x-a_x)^2 + (v_y-a_y)^2 + (v_z-a_z)^2\right]\right) &}
+
+\hangindent=0.25inwhere $a_x$, $a_y$, $a_z$, $b$, and $c$ are
+constants.  If $a_x=a_y=a_z=0$ we have an (ordinary) Maxwellian;
+otherwise we have a \textit{drifting} Maxwellian where the drift (or
+mean) velocity is $\mathbf{v}_{dr}=(a_x,a_y,a_z)$.\\
+
+\index{Plasma distribution function}
+\noindent
+Ordinary Maxwellian velocity distribution function for a plasma \scite{stangeby}{64-65}
+\fla{\mathcal{F}_M(\mathbf{v}) &= n\left(\frac{m}{2\pi T}\right)^{3/2} \exp\left(-\frac{m}{2T}\left(v_x^2 + v_y^2 + v_z^2\right)\right) &}
+
+\index{Plasma temperature definition}
+\noindent
+Definition of temperature in a Maxwellian plasma \scite{stangeby}{66}
+\fla{\frac{3}{2}nT &\equiv n\left\langle\frac{1}{2}m(v_x^2 + v_y^2 + v_z^2)\right\rangle \equiv \int \mathcal{F}_M(\mathbf{v})\left(\frac{1}{2}\left(v_x^2 + v_y^2 + v_z^2\right)\right)\, d\textbf{v} &}
+
+\noindent
+Total number density of particles in a Maxwellian plasma \scite{stangeby}{66}
+\fla{n &= \!\!\!\! \int\limits_{\substack{all\\velocity\\space}} \!\!\!\! \mathcal{F}_M(\mathbf{v}) \, d\mathbf{v} = 4\pi \int\limits_0^{\infty} w^2\mathcal{F}_M(w)\,dw &}
+
+\hangindent=0.25in where we have transformed to spherical coordinates
+such that $d\mathbf{v} = w^2sin\theta\,dw\,d\theta\,d\phi$ and
+$w=(v_x^2+v_y^2+v_z^2)^{1/2}$.\\
+
+\noindent
+Average (thermal) particle speed in a Maxwellian plasma \scite{stangeby}{67}
+\fla{\bar{c} &\equiv \frac{1}{n} \int\limits_0^\infty w\mathcal{F}_M(w)\,dw = \left(\frac{8T}{\pi m}\right)^{1/2} &}
+
+\noindent
+Thermal particle flux in a single dimension $x$ for a Maxwellian plasma \scite{stangeby}{67}
+\fla{\Gamma &\equiv \int\limits_0^\infty \int\limits_{-\infty}^\infty \int\limits_{-\infty}^\infty v_x\, \mathcal{F}_M(\mathbf{v})\,dv_x\,dv_y\,dv_z =  \frac{1}{4}n\bar{c} &}
+
+\section{Definition of a Magnetic Fusion Plasma}
+A fusion plasma is defined as an electrically conducting ionized gas
+that is dominated by collective effects and that magnetically confines
+its composing particles.  If $L$ is the macroscopic length scale of
+the plasma, $\omega_\mathrm{transit}$ is 1 over the time required for
+a particle to cross the plasma, and $v_T$ is the thermal particle
+velocity, the criteria to be a fusion plasma are: \scite{freidberg-PP}{136}
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{c c l}
+    \hline
+    Required condition \T\B& & Physical consequence\\[4pt]
+    \hline\hline
+    $\lambda_D \ll L$ \T& & Shielding of DC electric fields\\[4pt]
+    $\omega_{pe} \gg \omega_{\text{transit}} = v_{te}/L$ & & Shielding of AC electric fields\\[4pt]
+    $\Lambda_D \gg 1$ & & Collective effects dominate\\[4pt]
+    $\rho_{Li} \ll L$ & & Magnetic confinment of particle orbits\\[4pt]
+    $\Omega_i \gg v_{ti}/L$ \B& & Particle gyro orbits dominate free streaming\\[4pt]
+    \hline
+  \end{tabular}
+\end{table}
+    
+\section{Fundamental Plasma Definitions}
+
+\subsection{Resistivity}
+
+\index{Plasma resistivity}
+\noindent
+Plasma resistivity of an unmagnetized plasma \scite{chen}{179, 183}
+\fla{ \eta &= \frac{m_e}{n_ee^2\tau_c} \approx 5.2\times10^{-5}\frac{Z_\mathrm{eff}\ln\Lambda}{T_{\textrm{eV}}^{3/2}} \hspace{0.5cm} [\Omega \cdot \mathrm{m}] &}
+
+\noindent
+Spitzer resistivity of a singly charged \textit{unmagnetized} plasma \scite{wesson}{71}
+\fla{ \eta_{s} = 0.51\frac{m_e}{n_e e^2 \tau_e} &= 0.51\frac{m_e^{1/2} e^2 \ln\Lambda}{3\epsilon_0^2(2\pi T_e)^{3/2}} & \\
+                & \approx 1.65\times10^{-9} \frac{\ln\Lambda}{T_\mathrm{e,~keV}^{3/2}} \hspace{0.5cm} [\Omega \cdot \mathrm{m}] &}
+
+\index{Spitzer resistivity}
+\noindent
+Spitzer resistivity of a singly charged \textit{magnetized} plasma \scite{wesson}{71}
+\flatwo{ \eta_\mathrm{s,||~to~B} &= \eta_s & \eta_\mathrm{s,\perp~to~B} &= 1.96 \eta_s}{5}
+
+\noindent
+Spitzer resistivity of a plasma with impurities \scite{wesson}{72}
+\fla{ \eta_{s} &= Z_\mathrm{eff} \eta_s &}
+
+\noindent
+Spitzer resistivity of a pure non-hydrogenic plasma of charge $Z$ \scite{wesson}{72}
+\fla{ \eta(Z) &= N(Z)Z\eta_s \hspace{0.5cm} \mathrm{where} \hspace{0.5cm}\left\{
+  \begin{gathered}
+    N=0.85\text{ for }Z=2 \\
+    N=0.74\text{ for }Z=4 \\
+  \end{gathered} \right.
+  &
+}
+
+\index{Runaway electrons}
+\subsection{Runaway Electrons}
+
+\noindent
+Volumetric runaway electron production rate \scite{wesson}{74}
+\fla{ R &= \frac{2}{\sqrt{\pi}}\frac{n}{\tau_\mathrm{se}}\left(\frac{E}{E_D}\right)^{1/2}exp\left[-\frac{E_D}{4E}-\left(\frac{2E_D}{E}\right)^{1/2}\right] &}
+
+\index{Driecer electric field}
+\indent
+where the Driecer electric field, $E_D$ is \scite{wesson}{74}
+\fla{ E_D &= \frac{ne^3\ln\Lambda}{4\pi\epsilon_0^2m_e v_{te}^2} &\\
+          &\approx 4.582\times10^6 \frac{n \ln\Lambda}{v_{te}^2} \hspace{0.5cm} \text{[V/m]} &}
+
+\index{Times! electron slowing down}
+\indent
+and the electron slowing down time, $\tau_{se}$, for $v_e \gg v_{te}$ is \scite{wesson}{74}
+\fla{ \tau_{se} &= \frac{4\pi \epsilon_0^2m_e^2v_e^3}{ne^4 \ln \Lambda} &\\
+                &\approx 1.241\times10^{-6} \frac{v_e^3}{n\ln\Lambda} \hspace{0.5cm} \text{[s]} &}
+
+\index{Connor-Hastie limit}
+\noindent
+Relativistic runaway electron limit (Connor-Hastie limit) \scite{wesson}{74}
+\fla{ E &< \frac{ne^3 \ln \Lambda}{4\pi \epsilon_0^2 m_ec^2} & \\ &\approx 4.645\times10^{-53}\frac{n\ln\Lambda}{m_e} &}

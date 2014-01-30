@@ -1,0 +1,174 @@
+\chapter{Tokamak Edge Physics}
+In this chapter, all units are SI with the exception of temperature,
+which is defined in the historical units of eV (electron-volts).\\
+
+\noindent
+$e$ is the elementary electric charge\\
+$q$ is the total particle charge\\
+$Z$ is the particle atomic (proton) number\\
+$T$ is the plasma temperature\\
+$n$ is the plasma number density\\
+$p$ is the plasma pressure\\
+$e$ and $i$ refer to electrons and ions, respectively\\
+$a$ and $R_0$ are the minor and major radii of a toroidal plasma\\
+
+\index{Scrape off layer (SOL)}
+\section{The Simple Scrape Off Layer (SOL)}
+The simple SOL model describes 1D plasma flow from the core plasma to
+material boundary surfaces for limited or diverted plasma along the
+toroidal magnetic topology.  By assuming a high degree of
+collisionality ($\nu_*$), fluid approximations for plasma flow are valid
+and the neoclassical effects on particle orbits due to toroidal
+magnetic topology can be safely ignored.\\
+
+\index{Connection length}
+\noindent
+Parallel SOL connection length (rail/belt limiters, poloidal divertors) \scite{stangeby}{17}
+\fla{ L_{||} &\approx \pi Rq&}
+
+\noindent
+Particle time in the SOL (simple 1D model) \scite{stangeby}{20}
+\fla{ t_\mathrm{dwell} &\approx L_\parallel / c_\mathrm{s} &}
+
+\noindent
+SOL width (simple 1D model) \scite{stangeby}{23}
+\fla{ \lambda_\mathrm{SOL} &\approx \left(D_\perp L_\parallel / c_\mathrm{s}\right)^{1/2} &}
+\indent where $D_\perp$ is the anomalous diffusion coefficient.\\
+
+\noindent
+Force balance / pressure conservation in the SOL \scite{stangeby}{47}
+\fla{ p_\mathrm{e} + p_\mathrm{i} + mnv^2 &= \mathrm{constant} &}
+
+\noindent
+Plasma density variation along the SOL \scite{stangeby}{47}
+\fla{ n(x) &= \frac{n_0}{1+M(x)^2} &}
+\indent where $n_0$ is the density at the 'top' of the SOL and \\
+\indent $M=v/c_s$ is the plasma mach number.\\
+
+\noindent
+Electrons follow a Boltzmann distribution in the SOL \scite{stangeby}{28}
+\fla{ n &= n_0\mathrm{exp}\left(eV/T_\mathrm{e}\right) &}
+
+\noindent
+SOL particle sources: ionization (i) and cross-field transport (t) \scite{stangeby}{35-40}
+\fla{S_\mathrm{p} &= S_\mathrm{p,i}+S_\mathrm{p,t} = n_\mathrm{plasma}n_\mathrm{neutrals}\langle\sigma v\rangle_\mathrm{i} + D_\perp n / \lambda_\mathrm{SOL}^2 &}
+\indent
+where $\langle\sigma v\rangle_\mathrm{i} \equiv \langle\sigma v\rangle_\mathrm{i}(T_\mathrm{e},Z)$ is the ionization rate coefficient.\\
+
+\noindent
+Particle flux density in the SOL at the sheath edge (se) \scite{stangeby}{47}
+\fla{ \Gamma_\mathrm{se} &= \frac{1}{2}n_0c_\mathrm{s} &}
+\indent where $n_0$ is the density outside the pre-sheath.\\
+
+\noindent
+Electric field through SOL required to satisfy the Bohm Criterion \scite{stangeby}{48}
+\fla{ V_\mathrm{se} &= -0.7\frac{T_\mathrm{e}}{e} &}
+
+\noindent
+Floating sheath voltage \scite{stangeby}{79}
+\fla{ V_\mathrm{s} &= 0.5\frac{T_e}{e}\ln\left[2\pi \frac{m_e}{m_i}\left(Z+\frac{T_i}{T_e}\right)\right] &} %Changed \left(2+\frac{T_i}{T_e}\right) to \left(Z+\frac{T_i}{T_e}\right)
+
+\noindent
+Debye sheath width \scite{stangeby}{27}
+\fla{ \lambda_\mathrm{Debye} &\approx \left(\frac{\epsilon_0 T_\mathrm{e}}{n_\mathrm{e}e^2}\right)^{1/2} &}
+
+
+\index{Bohm criterion}
+\section{Bohm Criterion}
+The Bohm Criterion is derived from conservation of energy
+($1/2m_iv^2=-eV$) and particle conservation ($n_iv=constant$).  In an
+unmagnetized plasma it sets the SOL plasma exit velocity into the
+sheath edge (se). In magnetized plasma, it sets the SOL plasma exit
+velocity parallel to the magnetic field, after which the ions become
+demagnetized and perpendicularly enter the sheath; electrons remain
+magnetized. \scite{stangeby}{61-98}.\\
+
+\noindent
+Bohm Criterion (assuming $T_i = 0$) \scite{stangeby}{73}
+\fla {v_\mathrm{se} &\geq \left(\frac{T_e}{m_i}\right)^{1/2} \!\! = c_s &}
+
+\noindent
+Bohm Criterion (general form) \scite{stangeby}{76}
+\fla{ \int \limits_0^{\infty} \frac{f_\mathrm{se}^i(v)\,dv}{v^2} &\leq \frac{m_i}{T_e} &\\}
+
+\index{Two point model}
+\section{A Simple Two Point Model For Diverted SOLs}
+Diverted plasmas can obtain significant $\Delta$T along the SOL,
+resulting in divertor temperatures less than 10 eV.  The SOL can be
+approximated using a two point model: point 1 is the outboard midplane
+entrance to the SOL (``upstream'' or ``u'') and point 2 is the
+divertor terminus of the SOL (``target'' or ``t'').  It is assumed
+that upstream density, $n_u$, and the heat flux into the SOL,
+$q_{||}$, are control parameters; upstream and target temperatures,
+$T_u$ and $T_t$, as well as plasma density in front of the target,
+$n_t$, are subsequently determined.
+
+\subsection{Definitions}
+
+\noindent
+Dynamic and static pressure \scite{stangeby}{435}
+\fla{ p &= nT\left(1+M^2\right) \hspace{0.5cm}\mathrm{where}\hspace{0.5cm} \left\{
+  \begin{gathered}
+    M_\mathrm{u}^2 \ll 1\\ %Changed \gg to \ll
+    M_\mathrm{t}^2 \approx 1~\text{(Bohm Criterion)}\\
+  \end{gathered} \right. 
+  &
+}
+
+\index{Heat conduction}
+\noindent
+Heat conduction parallel to magnetic field \scite{stangeby}{187}
+\fla{ q_{\parallel,~\mathrm{cond}} &= -k_0T^{5/2}\frac{dT}{dx} \hspace{0.5cm}\mathrm{where}\hspace{0.5cm} \left\{
+  \begin{gathered}
+    k_\mathrm{e,0} \approx 2000~~\mathrm{[W~m^{-1}~eV^{7/2}]}\\
+    k_\mathrm{i,0} \approx 60~~\mathrm{[W~m^{-1}~eV^{7/2}]}\\
+  \end{gathered} \right.
+  &
+}
+
+\index{Heat flux tranmission coeficient}
+\noindent
+Sheath heat flux transmission coefficient at a biased surface \scite{stangeby}{652}
+\fla{ \gamma &= 2.5\frac{T_i}{ZT_e}-\frac{eV}{T_e}+2\left[2\pi\frac{m_e}{m_i}\left(Z+\frac{T_i}{T_e}\right)\right]^{-1/2}\exp\left(\frac{eV}{T_e}\right) + \chi_i &}
+\indent where $T_e\neq T_i$, $\chi_i$ is the electron-ion recombination energy,\\
+\indent and no secondary electrons emitted.\\
+
+
+ %Changed 2\left[\left(Z+\frac{T_i}{T_e}\right)2\pi\frac{m_e}{m_i}\right]^{1/2} to 2\left[2\pi\frac{m_e}{m_i}\left(Z+\frac{T_i}{T_e}\right)\right]^{-1/2}
+
+\subsection{Fundamental Relations}
+\noindent
+SOL pressure conservation \scite{stangeby}{224}
+\fla{ 2n_tT_t &= n_uT_u&}
+
+\noindent
+SOL power balance \scite{stangeby}{224}
+\fla{ T_u^{7/2} &= T_t^{7/2} + \frac{7q_{||}L}{2 k_0 } &}
+
+\noindent
+SOL heat flux limited to sheath heat flux \scite{stangeby}{224} 
+\fla{ q_{||} &= \gamma n_t T_t c_{st} &
+             &\approx 7 \hspace{0.5cm} \text{(D-D plasma, floating surface)} &}
+
+\subsection{Consequences}
+\noindent
+Upstream SOL temperature \scite{stangeby}{226}
+\fla{ T_u &\approx \left(\frac{7q_{||}L}{2k_0}\right)^{2/7} \hspace{0.5cm} \text{assuming that } T_t^{7/2} \ll T_u^{7/2} &}
+\indent
+$\rightarrow T_u$ is independent of $n_u$\\
+\indent
+$\rightarrow T_u$ is insensitive to parameter changes due to the 2/7 power\\
+\indent
+$\rightarrow q_\parallel$ is extremely sensitive to $T_u$ due to the 7/2 power\\
+
+\noindent
+Target SOL temperature \scite{stangeby}{227}
+\fla{ T_t &\approx \frac{2m_i}{\gamma^2e^2}\, \frac{q_\parallel^{10/7}}{(Lk_0)^{4/7}n_u^{2}} &}
+\indent
+$\rightarrow T_t$ is proportional to $\frac{1}{n_u^2}$\\
+
+\noindent
+Target SOL density \scite{stangeby}{227}
+\fla{ n_T &= \frac{n_u^3}{q_{||}^2}\left(\frac{7q_{||}L}{2k_0}\right)^{6/7}\frac{\gamma^2 e^2}{4m_i}  &}
+\indent
+$\rightarrow n_T$ is proportional to $n_u^3$

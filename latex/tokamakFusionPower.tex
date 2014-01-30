@@ -1,0 +1,149 @@
+\chapter{Tokamak Fusion Power}
+In this chapter, all units are SI with the exception of temperature
+and energy, which are defined in the historical units of eV
+(electron-volts).\\
+
+\noindent
+$n$ is the plasma density; $n_{20}=n/10^{20}$; $n_0 = n_e \approx n_i$\\
+$T$ is the plasma temperature; $T_\mathrm{keV}$ = $T$ in units of kiloelectron-volts\\
+$p$ is the plasma pressure\\
+$\nu$ is the radialprofile peaking factor\\
+$P$ is a power density\\
+$S$ is a total power\\
+$U$ is a total energy\\
+$E$ is the nuclear reaction energy gain\\
+$e$ is the elementary electric charge\\
+$q$ is the total particle charge\\
+$Z$ is the particle atomic (proton) number\\
+$e$ and $i$ subscripts refer to electrons and ions, respectively\\
+$D$ and $T$ refer to deuterium and tritium, respectively\\
+$\kappa$ is the plasma elongation; $\kappa$=b/a\\
+$a$,$b$, and $R_0$ are the 2 minor and major radii of a toroidal plasma\\
+$V$ is the volume of the plasma\\
+
+\section{Definitions}
+\index{Power densities}
+\noindent
+Fusion power density \scite{wesson}{8}
+\fla{P_\mathrm{fusion} &= n_D n_T \langle\sigma v\rangle_{DT} E_\mathrm{fusion} = \frac{1}{4}n_e^2\langle\sigma v\rangle_{DT} E_\mathrm{fusion} &}
+
+\noindent
+Fusion power \scite{wesson}{22}
+\fla{S_\mathrm{total} &= \frac{\pi}{2}E_\mathrm{fusion} \!\!\int \limits_{\substack{plasma\\ cross \\ section}}\!\! n^2\langle\sigma v\rangle_{DT} R\,dS & \\
+                      &= \frac{0.15}{2\nu +1}Rab\left(\frac{n}{10^{20}}\right)^2T_\mathrm{keV}^2 \hspace{0.5cm} \hspace{0.5cm} \mathrm{[MW]} &}
+\indent
+where it has been assumed that:
+\begin{eqnarray*}
+  &\text{Pressure profile: }& nT = \hat{n}\hat{T}\left(1-\frac{r^2}{\tilde{a}^2}\right)^\nu \\
+  &\text{Reaction rate: }& \langle\sigma v\rangle_\mathrm{DT} \approx 1.1\times10^{-24}T_\mathrm{keV}^2 \\
+  &\text{Plasma cross section: }& \tilde{a} = (ab)^{1/2}
+\end{eqnarray*}
+
+\noindent
+Alpha power density \scite{wesson}{10}
+\fla{P_\mathrm{\alpha} &= n_D n_T \langle\sigma v\rangle_{DT} E_\alpha = \frac{1}{4}n_e^2\langle\sigma v\rangle_{DT} E_\alpha  \approx (1/5)P_\mathrm{fusion}&}
+
+\noindent
+Neutron power density \scite{wesson}{10}
+\fla{P_\mathrm{neutron} &= n_D n_T \langle\sigma v\rangle_{DT} E_\mathrm{neutron} = \frac{1}{4}n_e^2\langle\sigma v\rangle_{DT} E_\mathrm{neutron} \approx (4/5)P_\mathrm{fusion}&}
+
+\noindent
+Ohmic heating power density \scite{wesson}{240}
+\fla{P_\mathrm{ohmic} &\approx \eta J_\mathrm{plasma}^2 &}
+
+\index{Stored plasma energy}
+\noindent
+Stored energy in confined plasma \scite{wesson}{9}
+\fla{ W &= \int 3nT\,d\tau = 3\langle nT\rangle V &}
+
+\index{Energy confinement time}
+\noindent
+Definition of energy confinement time \scite{wesson}{9}
+\fla{ \tau_E &= \frac{\text{Stored energy in the confined plasma}}{\text{Power lost from the confined plasma}} = \frac{W}{S_\mathrm{loss}} &}
+
+\index{Conduction power losses}
+\noindent
+Power loss from a confined plasma due to conduction \scite{wesson}{9-10}
+\fla{P_\mathrm{conduction} &= \frac{3nT}{\tau_E} &}
+
+\index{Bremsstrahlung power losses}
+\noindent
+Power loss from a confined plasma due to bremsstrahlung radiation \scite{wesson}{227-228}
+\fla{P_\mathrm{bremsstrahlung} &\approx (5.35\times10^{-37})Z^2 n_e n_i T_\mathrm{keV}^{1/2} \hspace{0.5cm} \text{[W m$^{-3}$]}  &}
+
+
+\index{Power balance}
+\section{Power Balance in a D-T Fusion Reactor}
+Confined fusion plasmas are not in thermal equilibrium, and,
+therefore, power must be balanced in a steady-state tokamak reactor.
+Power that is lost from the confined plasma due to conduction,
+radiation and other mechanisms must be continuously replenished by
+alpha particle and auxilliary heating mechanisms.
+
+\noindent
+\fla{ 0 &= \left(P_{\mathrm{alpha}} + P_{\mathrm{auxilliary}}\right) - \left(P_{\mathrm{conduction}} + P_{\mathrm{bremsstrahlung}} + \ldots\right) &}
+\indent 
+where 
+\fla{\indent &P_{\mathrm{auxilliary}} = P_{\mathrm{ohmic}} + P_{\mathrm{ICH}} + P_{\mathrm{ECH}} + P_{\mathrm{neutral~beam}} + \ldots &}
+
+\subsection{Impurity Effects on Power Balance}
+The fractional impurity densities $f_j=n_j/n_0$ in the plasma core cause:
+\begin{enumerate}
+  \item{Modified quasi-neutrality balance \scite{wesson}{36}
+    \fla{ n_e &= n_D + n_T + \sum\limits_jZn_j &}}
+  \item{Increased radiated power loss~~\cite{authors}
+    \fla{ P_{\mathrm{bremsstrahlung}} &\approx (5.35\times10^{-37})n_e^2T_\mathrm{keV}^{1/2}Z_\mathrm{eff} \hspace{0.5cm} \text{[W m$^{-3}$]} &}}
+  \item{Dilution of fusion fuel~~\cite{authors}
+    \fla{ P_{\mathrm{alpha}} &= \frac{1}{4}n_e^2(1-\sum\limits_jf_jZ_j)^2\langle\sigma v\rangle E_\alpha &}}
+\end{enumerate}
+
+\index{Q! Fusion}
+\subsection{Metrics of Power Balance}
+
+\index{Physics gain factor}
+\noindent
+The physics gain factor for D-T plasma \scite{wesson}{12}
+\fla{ Q_\mathrm{phys} &= \frac{\frac{1}{4}n_e^2\langle\sigma v \rangle E_\mathrm{fusion} \cdot V_{\mathrm{plasma}}}{P_{\mathrm{heating}}} = \frac{5P_\alpha}{P_{\mathrm{heating}}} &}
+\indent
+where
+\begin{enumerate}
+  \item{$Q_\mathrm{phys}$=1 is break even}
+  \item{$Q_\mathrm{phys}>$5 is a burning plasma}
+  \item{$Q_\mathrm{phys}=\infty$ is an ignited plasma}
+\end{enumerate}
+
+\index{Engineering gain factor}
+\noindent
+The engineering gain factor~~\cite{authors}
+\fla{ Q_\mathrm{eng} &= \frac{P_\mathrm{electricity}^\mathrm{out}}{P_\mathrm{electricity}^\mathrm{in}} &}
+
+
+\index{Ignition condition}
+\index{Lawson criterion|see{Ignition condition}}
+\section{The Ignition Condition (or Lawson Criterion)}
+The ignition condition describes the minimum values for density ($n$),
+temperature ($T$), and energy confinement time ($\tau_E$) that are
+required for a confined plasma to reach ignition.  Ignition is defined
+as $P_\mathrm{alpha} > P_{\mathrm{loss}}$, where
+$P_{\mathrm{auxilliary}} = 0$. \scite{wesson}{10-15} For a given
+temperature, $T$, the following equations describe the minimum
+$n\tau_E$ required to reach ignition under different assumptions:
+
+\begin{enumerate}
+
+   \item{$P_\mathrm{alpha} = P_\mathrm{conduction}$ \scite{wesson}{10-11}
+     \fla{n\tau_E &= \frac{12kT}{\langle\sigma v\rangle E_\alpha} &}
+    Using $\langle\sigma v\rangle_{DT} \approx 1.1\times10^{-24}T_\mathrm{keV}^2$
+    and $E_\alpha = 3.5 \,\mathrm{MeV}$~~\cite{authors}:
+    \fla{nT\tau_E &\gtrsim 3\times10^{21} \text{ m$^{-3}$ keV s} &}}
+
+  \item{$P_\mathrm{alpha} = P_\mathrm{conduction} + P_\mathrm{bremsstrahlung}$~~\cite{authors}: 
+     \fla{n\tau_E &= \frac{12kT}{\langle\sigma v\rangle E_\alpha - 2.14\times10^{-36}T_\mathrm{keV}^{1/2}} &}}
+
+  \item{$P_\mathrm{alpha} = P_\mathrm{conduction} + P_\mathrm{bremsstrahlung}$ with alpha impurities $f_\alpha = n_\alpha/n_e$~~\cite{authors}: 
+    \fla{n\tau_E &= \frac{12kT}{(1-2f_\alpha)^2\langle\sigma v\rangle E_\alpha - (1+2f_\alpha)2.14\times10^{-36}T_\mathrm{keV}^{1/2}} &}}
+
+  \item{$P_\mathrm{alpha} = P_\mathrm{conduction} + P_\mathrm{bremsstrahlung}$ with impurity densities $f_j = n_j/n_e$~~\cite{authors}:
+    \fla{n\tau_E &= \frac{12kT}{(1-\sum\limits_jf_jZ_j)^2\langle\sigma v\rangle E_\alpha - (2.14\times10^{-36})Z_\mathrm{eff}T_\mathrm{keV}^{1/2}} &}}
+
+\end{enumerate}

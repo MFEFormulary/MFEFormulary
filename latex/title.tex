@@ -1,0 +1,44 @@
+% This template is a modified version of the ``Classic Lined Title
+% Page'' written by Peter Wilson (herries.press@earthlink.net) under
+% the Creative Commons CC BY-NC-SA 3.0 license, which can be viewed at
+% (http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleAT}{\begingroup % Create the command for including the title page in the document
+\newlength{\drop} % Command for generating a specific amount of whitespace
+\drop=0.1\textheight % Define the command as 10% of the total text height
+
+\rule{\textwidth}{1.2pt}\par % Thick horizontal line
+
+\vspace{\drop} % Whitespace between the top lines and title
+\centering % Center all text
+\textcolor{Blue}{ % Red font color
+{\Huge MAGNETIC FUSION ENERGY}\\[1.0\baselineskip] % Title line 1
+% {\Large OF}\\[0.75\baselineskip] % Title line 2
+{\Huge FORMULARY}} % Title line 3
+
+\vspace{0.9\drop} % Whitespace between the title and short horizontal line
+\rule{0.3\textwidth}{0.5pt}\par % Short horizontal line under the title
+\vspace{\drop} % Whitespace between the thin horizontal line and the author name
+
+{\Large \textsc{Zachary S Hartwig} \\ \small MIT Plasma Science and Fusion Center }\par % Author name
+\vspace{1cm}
+{\Large \textsc{Yuri A Podpaly} \\ \small National Institute of Standards and Technology}\par % Author name
+
+\vfill % Whitespace between the author name and publisher text
+{\large \textsc{Revision : February 2014}}\par % Publisher
+
+\rule{\textwidth}{1.2pt}\par % Thick horizontal line
+
+\vspace{0.25cm}
+
+ \begin{figure}[b!]
+   \centering
+    \href{http://creativecommons.org/licenses/by-sa/4.0}
+    {\includegraphics{figures/CreativeCommons}}
+  \end{figure}
+  
+\endgroup}
