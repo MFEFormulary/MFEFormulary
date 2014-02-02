@@ -57,7 +57,7 @@ GNU Makefile to build PDF and Postscript:
 
 ```bash
   # Clone the MFE Formulary from GitHub:
-  git clone https://github.com/zach-hartwig/MFEFormulary.git  
+  git clone https://github.com/MFEFormulary/MFEFormulary.git  
 
   # Move to the LaTeX source code directory:
   cd MFEFormulary/latex
