@@ -6,6 +6,12 @@ Formulary. The intention is to provide alert users to errors in
 previous revisions that may have/may be affecting their research and
 to provide transparency on the development of the Formulary
 
+#### Revision : ???????? ????
+
+* Added formula for the maximum electron recoil energy in Compton
+  scattering to Ch9 (theta = 180 degrees)
+
+
 #### Revision : February 2014
 
 * New title page reflecting Yuri's new institution, url linked CC
