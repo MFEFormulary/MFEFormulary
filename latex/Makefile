@@ -52,5 +52,5 @@ install:
 	$(info Copying MFEFormary.pdf and MFEFormulary.ps to top-level directory)
 
 clean:
-	@rm $(BUILDDIR)/* $(PDFTARGET) $(PSTARGET) 2> /dev/null
+	@rm $(BUILDDIR)/* $(PDFTARGET) $(PSTARGET) -f 2> /dev/null
 	$(info All unnecessary makefile dependencies have been removed!)
